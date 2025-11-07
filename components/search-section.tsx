@@ -28,10 +28,10 @@ export default function SearchSection() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-3 sm:px-4 md:px-5 py-2 sm:py-3 font-semibold text-xs sm:text-sm md:text-base transition whitespace-nowrap rounded-md ${
+                className={`px-3 sm:px-4 md:px-5 py-2 sm:py-3 font-semibold text-xs sm:text-sm md:text-base transition whitespace-nowrap ${
                   activeTab === tab.id
-                    ? "text-gray-900 border-b-2 border-gray-900"
-                    : "text-gray-600 hover:text-gray-900"
+                    ? "text-gray-900 border-b-2 border-purple-800"
+                    : "text-gray-500 hover:text-gray-900"
                 }`}
               >
                 {tab.label}
