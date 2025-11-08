@@ -3,17 +3,14 @@ import HeroSection from "@/components/hero-section";
 import SearchSection from "@/components/search-section";
 import FeaturesSection from "@/components/features-section";
 import { PropertyGrid } from "@/components/property-grid";
+import { getBaseUrl } from "@/lib/baseUrl";
 
 export default async function Home() {
   let properties = [];
   let hasError = false;
 
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
-    const res = await fetch(`${baseUrl}/api/items`, {
-      cache: "no-store",
-    });
-
+    const res = await fetch(`${getBaseUrl()}/api/items`, { cache: "no-store" });
     if (res.ok) {
       properties = await res.json();
     } else {
