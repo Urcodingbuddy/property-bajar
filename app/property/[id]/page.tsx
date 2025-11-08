@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import { getBaseUrl } from "@/lib/baseUrl";
 interface Property {
   _id: string;
   title: string;
@@ -27,10 +27,7 @@ export default async function PropertyPage({
   const { id } = await params;
 
   // Fetch property data from backend
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
-  const res = await fetch(`${baseUrl}/api/items?id=${id}`, {
-    cache: "no-store",
-  });
+  const res = await fetch(`${getBaseUrl()}/api/items?id=${id}`, { cache: "no-store" });
 
   if (!res.ok) {
     return (
