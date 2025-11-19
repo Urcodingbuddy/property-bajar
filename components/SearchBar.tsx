@@ -39,7 +39,7 @@ export function SearchBar() {
             >
               {tab}
               {tab === 'Post Property' && (
-                <span className="ml-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded">
+                <span className="ml-2 bg-linear-to-b from-[#1B8700] to-[#072100] text-white text-xs px-2 py-0.5 rounded">
                   Free
                 </span>
               )}
