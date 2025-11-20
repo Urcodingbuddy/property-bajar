@@ -64,7 +64,7 @@ export default function RecommendedProjects() {
     <div className="relative w-full max-w-7xl px-4 flex flex-col gap-10">
       <div className="space-y-2">
         <h2 className="text-2xl font-semibold text-black">
-          Recommended Projects
+          RECOMMENDED PROJECTS
         </h2>
         <p className="text-sm text-gray-500">
           The most searched projects in Bhopal

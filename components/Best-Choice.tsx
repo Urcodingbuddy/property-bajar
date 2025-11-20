@@ -62,7 +62,7 @@ export default function BestChoice() {
   return (
     <div className="relative w-full max-w-7xl px-4">
       <div className="space-y-2">
-        <h2 className="text-2xl font-semibold text-black">Best Choices</h2>
+        <h2 className="text-2xl font-semibold text-black">BEST CHOICE</h2>
         <p className="text-sm text-gray-500">Carefully selected for you</p>
       </div>
 
