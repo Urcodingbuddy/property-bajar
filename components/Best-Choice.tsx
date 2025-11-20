@@ -2,7 +2,16 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const data = Array.from({ length: 12 }).map((_, i) => ({
+
+interface ProjectData {
+  id: number;
+  price: string;
+  title: string;
+  posted: string;
+  time: string;
+  img: string;
+}
+const data: ProjectData[] = Array.from({ length: 12 }).map((_, i) => ({
   id: i,
   price: "₹ 2.25 Cr",
   title: "5 BHK Independent House...",
@@ -51,9 +60,11 @@ export default function BestChoice() {
   }, [cardWidth]);
 
   return (
-    <div className="relative w-full max-w-7xl px-4 py-8">
-      <h2 className="text-2xl font-semibold text-black">Best Choices</h2>
-      <p className="text-sm text-gray-500">Carefully selected for you</p>
+    <div className="relative w-full max-w-7xl px-4">
+      <div className="space-y-2">
+        <h2 className="text-2xl font-semibold text-black">Best Choices</h2>
+        <p className="text-sm text-gray-500">Carefully selected for you</p>
+      </div>
 
       <div className="relative mt-6">
         <button
@@ -75,7 +86,7 @@ export default function BestChoice() {
         <div
           ref={sliderRef}
           onScroll={stopAuto}
-          className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
+          className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-20"
         >
           {data.map((item) => (
             <div
@@ -112,7 +123,7 @@ export default function BestChoice() {
                 </div>
               </div>
 
-              <div className="w-full h-40 flex flex-col gap-2 justify-center px-4">
+              <div className="w-full h-40 flex flex-col gap-2 justify-center rounded-b-xl px-4 shadow-2xl">
                 <h3 className="text-lg font-semibold text-[#0E1F47] leading-tight">
                   {item.title}
                 </h3>
