@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-linear-to-r from-[#8812FC] to-[#6D10F4] shadow-lg">
+    // <header className="fixed top-0 left-0 right-0 z-50 bg-linear-to-r from-[#8812FC] to-[#6D10F4] shadow-lg">
       <div className="max-w-340 mx-auto">
         <div className="flex items-center justify-between h-16 px-0 md:px-8">
           <div className="w-50">
@@ -123,6 +123,6 @@ export default function Header() {
           </nav>
         )}
       </div>
-    </header>
+    // </header>
   );
 }
