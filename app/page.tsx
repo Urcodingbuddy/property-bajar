@@ -5,11 +5,10 @@ import HighDemand from "@/components/High-Demand";
 import Navbar from "@/components/Navbar";
 import RecProjects from "@/components/Rec-Projects";
 import { SearchBar } from "@/components/SearchBar";
+import SellProperty from "@/components/Sell-Property";
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col gap-20">
-      <Navbar />
-
       <section>
         <HeroTitle />
       </section>
@@ -31,7 +30,11 @@ export default function Home() {
       </section>
 
       <section className="w-full flex justify-center mb-20">
-      <HighDemand />
+        <HighDemand />
+      </section>
+
+      <section className="w-full flex justify-center mb-20">
+        <SellProperty />
       </section>
     </main>
   );
