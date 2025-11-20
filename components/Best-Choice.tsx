@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-
 interface ProjectData {
   id: number;
   price: string;
@@ -11,53 +10,81 @@ interface ProjectData {
   time: string;
   img: string;
 }
-const data: ProjectData[] = Array.from({ length: 12 }).map((_, i) => ({
-  id: i,
-  price: "₹ 2.25 Cr",
-  title: "5 BHK Independent House...",
-  posted: "Posted By Owner",
-  time: "3 Month Ago",
-  img: "./villa.jpg",
-}));
+const data: ProjectData[] = Array.from({ length: 12 }).map(
+  (_, i) => ({
+    id: i,
+    price: "₹ 2.25 Cr",
+    title: "5 BHK Independent House...",
+    posted: "Posted By Owner",
+    time: "3 Month Ago",
+    img: "./villa.jpg",
+  })
+);
 
 export default function BestChoice() {
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const autoRef = useRef<NodeJS.Timeout | null>(null);
-  const [cardWidth, setCardWidth] = useState(0);
+const sliderRef = useRef<HTMLDivElement>(null);
+const autoRef = useRef<NodeJS.Timeout | null>(null);
+const cooldownRef = useRef<NodeJS.Timeout | null>(null);
+const isAutoScrolling = useRef(false);
+const [cardWidth, setCardWidth] = useState(0);
 
-  useEffect(() => {
-    const firstCard = sliderRef.current?.children?.[0] as HTMLElement;
-    if (firstCard) setCardWidth(firstCard.getBoundingClientRect().width);
-  }, []);
+useEffect(() => {
+  const firstCard = sliderRef.current?.children?.[0] as HTMLElement;
+  if (firstCard) setCardWidth(firstCard.getBoundingClientRect().width);
+}, []);
 
-  const step = () => {
-    if (!sliderRef.current) return;
-    sliderRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
-  };
+const step = () => {
+  if (!sliderRef.current) return;
 
-  const backward = () => {
-    if (!sliderRef.current) return;
-    sliderRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
-  };
+  isAutoScrolling.current = true;
+  sliderRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
 
-  const startAuto = () => {
-    if (autoRef.current) return;
-    autoRef.current = setInterval(step, 3000);
-  };
+  setTimeout(() => {
+    isAutoScrolling.current = false;
+  }, 350);
+};
 
-  const stopAuto = () => {
-    if (autoRef.current) {
-      clearInterval(autoRef.current);
-      autoRef.current = null;
-    }
-  };
+const backward = () => {
+  if (!sliderRef.current) return;
 
-  useEffect(() => {
-    if (cardWidth > 0) {
-      startAuto();
-    }
-    return () => stopAuto();
-  }, [cardWidth]);
+  isAutoScrolling.current = true;
+  sliderRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
+
+  setTimeout(() => {
+    isAutoScrolling.current = false;
+  }, 350);
+};
+
+const startAuto = () => {
+  if (autoRef.current) return;
+  autoRef.current = setInterval(step, 2000);
+};
+
+const stopAuto = () => {
+  if (autoRef.current) {
+    clearInterval(autoRef.current);
+    autoRef.current = null;
+  }
+};
+
+const restartLater = () => {
+  if (cooldownRef.current) clearTimeout(cooldownRef.current);
+
+  cooldownRef.current = setTimeout(() => {
+    startAuto();
+  }, 2000); // resume after 2 seconds
+};
+
+const handleScroll = () => {
+  if (isAutoScrolling.current) return; // ignore auto-scroll events
+  stopAuto();
+  restartLater();
+};
+
+useEffect(() => {
+  if (cardWidth > 0) startAuto();
+  return () => stopAuto();
+}, [cardWidth]);
 
   return (
     <div className="relative w-full max-w-7xl px-4">
@@ -85,7 +112,7 @@ export default function BestChoice() {
 
         <div
           ref={sliderRef}
-          onScroll={stopAuto}
+          onScroll={handleScroll}
           className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-20"
         >
           {data.map((item) => (
