@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const poppins = Poppins({
   weight: ["400", "600", "700"],
 });
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,10 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.className} bg-[#F9FCFF] antialiased`}
-      >
-        {children}
+      <body className={`${poppins.className} bg-[#F9FCFF] antialiased`}>
+        <header className="fixed top-0 left-0 right-0 z-50 bg-linear-to-r from-[#8812FC] to-[#6D10F4] shadow-lg">
+          <Navbar />
+        </header>
+        <main className="pt-16">{children}</main>
       </body>
     </html>
   );
