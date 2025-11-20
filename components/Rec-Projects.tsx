@@ -2,7 +2,16 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react";
 
-const data = Array.from({ length: 12 }).map((_, i) => ({
+interface ProjectData {
+  id: number;
+  price: string;
+  title: string;
+  description: string;
+  img: string;
+  hasRera: boolean;
+}
+
+const data: ProjectData[] = Array.from({ length: 12 }).map((_, i) => ({
   id: i,
   price: "₹2.25 Cr",
   title: "Signature City",
@@ -14,10 +23,10 @@ const data = Array.from({ length: 12 }).map((_, i) => ({
 export default function RecommendedProjects() {
   const sliderRef = useRef<HTMLDivElement>(null);
   const autoRef = useRef<NodeJS.Timeout | null>(null);
-  const [cardWidth, setCardWidth] = useState(0);
+  const [cardWidth, setCardWidth] = useState<number>(0);
 
   useEffect(() => {
-    const firstCard = sliderRef.current?.children?.[0] as HTMLElement;
+    const firstCard = sliderRef.current?.children?.[0] as HTMLElement | undefined;
     if (firstCard) setCardWidth(firstCard.getBoundingClientRect().width);
   }, []);
 
@@ -48,11 +57,12 @@ export default function RecommendedProjects() {
       startAuto();
     }
     return () => stopAuto();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cardWidth]);
 
   return (
-    <div className="w-full p-10 flex flex-col justify-center items-center">
-      <div className="w-full max-w-7xl flex flex-col gap-5">
+    <div className="relative w-full max-w-7xl px-4 flex flex-col gap-10">
+      <div className="space-y-2">
         <h2 className="text-2xl font-semibold text-black">
           Recommended Projects
         </h2>
@@ -61,7 +71,7 @@ export default function RecommendedProjects() {
         </p>
       </div>
 
-      <div className="relative w-full max-w-7xl mt-6">
+      <div className="relative">
         <button
           onClick={backward}
           className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white border rounded-full p-2 shadow-lg hover:bg-gray-50 transition-colors"
@@ -81,7 +91,7 @@ export default function RecommendedProjects() {
         <div
           ref={sliderRef}
           onScroll={stopAuto}
-          className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
+          className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-20"
         >
           {data.map((item) => (
             <div
