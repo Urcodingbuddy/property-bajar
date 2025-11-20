@@ -23,7 +23,7 @@ export function SearchBar() {
   }
 
   return (
-    <div className="w-full px-2 md:px-4 -mt-20 relative z-10">
+    <div className="w-full px-2 md:px-4  absolute bottom-3 z-10">
       <div className="max-w-5xl mx-auto">
         {/* Tabs - Hidden on mobile */}
         <div className="hidden md:flex bg-white rounded-t-xl overflow-x-auto border-b border-gray-200">
