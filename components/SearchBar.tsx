@@ -114,7 +114,7 @@ export function SearchBar() {
 
         {/* Search card */}
         <div
-          className="bg-white rounded-xl md:rounded-t-none shadow-lg p-3 md:p-6 relative z-50"
+          className="bg-white rounded-xl rounded-t-none shadow-lg p-3 md:p-6 relative z-50"
           ref={wrapperRef}
         >
           {/* mobile simplified */}
@@ -203,7 +203,7 @@ export function SearchBar() {
         {/* mobile: full-screen sheet for filters (when open) */}
         {filtersOpen && (
           <div className="md:hidden fixed inset-0 z-40 bg-black/40">
-            <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-lg p-4 max-h-[85vh] overflow-auto">
+            <div className="fixed bottom-0 left-0 right-0 bg-white rounded-b-lg p-4 max-h-[85vh] overflow-auto">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-semibold">Property Types</h3>
                 <button
