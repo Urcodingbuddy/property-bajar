@@ -10,81 +10,79 @@ interface ProjectData {
   time: string;
   img: string;
 }
-const data: ProjectData[] = Array.from({ length: 12 }).map(
-  (_, i) => ({
-    id: i,
-    price: "₹ 2.25 Cr",
-    title: "5 BHK Independent House...",
-    posted: "Posted By Owner",
-    time: "3 Month Ago",
-    img: "./villa.jpg",
-  })
-);
+const data: ProjectData[] = Array.from({ length: 12 }).map((_, i) => ({
+  id: i,
+  price: "₹ 2.25 Cr",
+  title: "5 BHK Independent House...",
+  posted: "Posted By Owner",
+  time: "3 Month Ago",
+  img: "./villa.jpg",
+}));
 
 export default function BestChoice() {
-const sliderRef = useRef<HTMLDivElement>(null);
-const autoRef = useRef<NodeJS.Timeout | null>(null);
-const cooldownRef = useRef<NodeJS.Timeout | null>(null);
-const isAutoScrolling = useRef(false);
-const [cardWidth, setCardWidth] = useState(0);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const autoRef = useRef<NodeJS.Timeout | null>(null);
+  const cooldownRef = useRef<NodeJS.Timeout | null>(null);
+  const isAutoScrolling = useRef(false);
+  const [cardWidth, setCardWidth] = useState(0);
 
-useEffect(() => {
-  const firstCard = sliderRef.current?.children?.[0] as HTMLElement;
-  if (firstCard) setCardWidth(firstCard.getBoundingClientRect().width);
-}, []);
+  useEffect(() => {
+    const firstCard = sliderRef.current?.children?.[0] as HTMLElement;
+    if (firstCard) setCardWidth(firstCard.getBoundingClientRect().width);
+  }, []);
 
-const step = () => {
-  if (!sliderRef.current) return;
+  const step = () => {
+    if (!sliderRef.current) return;
 
-  isAutoScrolling.current = true;
-  sliderRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
+    isAutoScrolling.current = true;
+    sliderRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
 
-  setTimeout(() => {
-    isAutoScrolling.current = false;
-  }, 350);
-};
+    setTimeout(() => {
+      isAutoScrolling.current = false;
+    }, 350);
+  };
 
-const backward = () => {
-  if (!sliderRef.current) return;
+  const backward = () => {
+    if (!sliderRef.current) return;
 
-  isAutoScrolling.current = true;
-  sliderRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
+    isAutoScrolling.current = true;
+    sliderRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
 
-  setTimeout(() => {
-    isAutoScrolling.current = false;
-  }, 350);
-};
+    setTimeout(() => {
+      isAutoScrolling.current = false;
+    }, 350);
+  };
 
-const startAuto = () => {
-  if (autoRef.current) return;
-  autoRef.current = setInterval(step, 2000);
-};
+  const startAuto = () => {
+    if (autoRef.current) return;
+    autoRef.current = setInterval(step, 2000);
+  };
 
-const stopAuto = () => {
-  if (autoRef.current) {
-    clearInterval(autoRef.current);
-    autoRef.current = null;
-  }
-};
+  const stopAuto = () => {
+    if (autoRef.current) {
+      clearInterval(autoRef.current);
+      autoRef.current = null;
+    }
+  };
 
-const restartLater = () => {
-  if (cooldownRef.current) clearTimeout(cooldownRef.current);
+  const restartLater = () => {
+    if (cooldownRef.current) clearTimeout(cooldownRef.current);
 
-  cooldownRef.current = setTimeout(() => {
-    startAuto();
-  }, 2000); // resume after 2 seconds
-};
+    cooldownRef.current = setTimeout(() => {
+      startAuto();
+    }, 2000); // resume after 2 seconds
+  };
 
-const handleScroll = () => {
-  if (isAutoScrolling.current) return; // ignore auto-scroll events
-  stopAuto();
-  restartLater();
-};
+  const handleScroll = () => {
+    if (isAutoScrolling.current) return; // ignore auto-scroll events
+    stopAuto();
+    restartLater();
+  };
 
-useEffect(() => {
-  if (cardWidth > 0) startAuto();
-  return () => stopAuto();
-}, [cardWidth]);
+  useEffect(() => {
+    if (cardWidth > 0) startAuto();
+    return () => stopAuto();
+  }, [cardWidth]);
 
   return (
     <div className="relative w-full max-w-7xl px-4">
@@ -118,7 +116,7 @@ useEffect(() => {
           {data.map((item) => (
             <div
               key={item.id}
-              className="min-w-[85%] sm:min-w-[50%] md:min-w-[33.33%] lg:min-w-[25%] bg-white shadow-md border border-gray-100 snap-start shrink-0 rounded-lg overflow-hidden"
+              className="min-w-[85%] sm:min-w-[50%] md:min-w-[33.33%] lg:min-w-[25%] flex flex-col justify-evenly bg-white shadow-md border border-gray-100 snap-start shrink-0 rounded-lg overflow-hidden"
             >
               <div className="relative w-full h-40">
                 <img
