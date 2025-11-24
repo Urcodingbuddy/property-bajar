@@ -7,7 +7,7 @@ import { SearchBar } from "@/components/SearchBar";
 import SellProperty from "@/components/Sell-Property";
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col gap-20">
+    <main className="min-h-screen flex flex-col gap-20 bg-white">
       <section>
         <HeroTitle />
       </section>
