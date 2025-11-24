@@ -181,7 +181,7 @@ export default function HighDemand() {
                   </div>
                 </div>
 
-                <div className="w-full rounded-2xl h-35 border-2 -mt-6 flex flex-col justify-end py-4 px-4 space-y-1.5 bg-white relative">
+                <div className="w-full rounded-2xl h-35 -mt-6 flex flex-col justify-end py-4 px-4 space-y-1.5 bg-white relative">
                   <h3 className="text-lg font-semibold text-[#0E1F47] leading-tight">
                     {item.title}
                   </h3>
