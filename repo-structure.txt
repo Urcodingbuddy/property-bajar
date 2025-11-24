@@ -1,0 +1,4776 @@
+|   \---daemon
+|   \---web
+|       |   |   \---chunks
+|       |   |   |   |   \---route
+|       |   |   |   \---page
+|       |   |   \---chunks
+|       |   |       \---ssr
+|       |   |   \---media
+|       |   \---types
+|       \---node_modules
+|           |   \---react-slot
+|           |       \---dist
+|           |   \---postcss
+|           |       \---dist
+|           |   |   \---ts5.6
+|           |   |   \---ts5.0
+|           |   |       \---v18
+|           |   |           \---ts5.0
+|           |   \---react-dom
+|           |       \---test-utils
+|           |   |   \---node_modules
+|           |   |       |   \---js
+|           |   |       |       |   \---configs
+|           |   |       |       \---types
+|           |   |       |   \---eslint-plugin-next
+|           |   |       |       \---dist
+|           |   |       |           \---utils
+|           |   |       |   |   |   |   \---flat
+|           |   |       |   |   |   |   \---prefer-optional-chain-utils
+|           |   |       |   |   |   \---util
+|           |   |       |   |   \---node_modules
+|           |   |       |   |       \---.bin
+|           |   |       |   \---parser
+|           |   |       |       \---node_modules
+|           |   |       |           \---.bin
+|           |   |       |   |   |   \---formatters
+|           |   |       |   |   |   \---js
+|           |   |       |   |   |       \---source-code
+|           |   |       |   |   |           \---token-store
+|           |   |       |   |   |   \---code-path-analysis
+|           |   |       |   |   |   \---utils
+|           |   |       |   |   |       \---unicode
+|           |   |       |   |   \---types
+|           |   |       |   \---node_modules
+|           |   |       |       \---.bin
+|           |   |       |   \---node_modules
+|           |   |       |       \---.bin
+|           |   |       |   |   \---workflows
+|           |   |       |   \---tests
+|           |   |       |   |   \---util
+|           |   |       |   \---node_modules
+|           |   |       |       \---.bin
+|           |   |       |   \---node_modules
+|           |   |       |       \---.bin
+|           |   |       |   \---node_modules
+|           |   |       |       \---.bin
+|           |   |       |   \---lib
+|           |   |       |       \---zh-tw
+|           |   |       \---typescript-eslint
+|           |   |           \---node_modules
+|           |   |               \---.bin
+|           |   \---ui
+|           |       |   |   \---react-slot
+|           |       |   |       \---dist
+|           |       |   |   \---postcss
+|           |       |   |       \---dist
+|           |       |   |   \---gen
+|           |       |   |       |   \---templates
+|           |       |   |       |       |   \---templates
+|           |       |   |       |       \---simple-ts
+|           |       |   |       |           \---templates
+|           |       |   |       \---node_modules
+|           |       |   |           \---.bin
+|           |       |   |   |   \---ts5.6
+|           |       |   |   |   \---ts5.0
+|           |       |   |   |       \---v18
+|           |       |   |   |           \---ts5.0
+|           |       |   |   \---react-dom
+|           |       |   |       \---test-utils
+|           |       |   |   |   \---node_modules
+|           |       |   |   |       |   \---js
+|           |       |   |   |       |       |   \---configs
+|           |       |   |   |       |       \---types
+|           |       |   |   |       |   \---eslint-plugin-next
+|           |       |   |   |       |       \---dist
+|           |       |   |   |       |           \---utils
+|           |       |   |   |       |   |   |   |   \---flat
+|           |       |   |   |       |   |   |   |   \---prefer-optional-chain-utils
+|           |       |   |   |       |   |   |   \---util
+|           |       |   |   |       |   |   \---node_modules
+|           |       |   |   |       |   |       \---.bin
+|           |       |   |   |       |   \---parser
+|           |       |   |   |       |       \---node_modules
+|           |       |   |   |       |           \---.bin
+|           |       |   |   |       |   |   |   \---formatters
+|           |       |   |   |       |   |   |   \---js
+|           |       |   |   |       |   |   |       \---source-code
+|           |       |   |   |       |   |   |           \---token-store
+|           |       |   |   |       |   |   |   \---code-path-analysis
+|           |       |   |   |       |   |   |   \---utils
+|           |       |   |   |       |   |   |       \---unicode
+|           |       |   |   |       |   |   \---types
+|           |       |   |   |       |   \---node_modules
+|           |       |   |   |       |       \---.bin
+|           |       |   |   |       |   \---node_modules
+|           |       |   |   |       |       \---.bin
+|           |       |   |   |       |   |   \---workflows
+|           |       |   |   |       |   \---tests
+|           |       |   |   |       |   |   \---util
+|           |       |   |   |       |   \---node_modules
+|           |       |   |   |       |       \---.bin
+|           |       |   |   |       |   \---node_modules
+|           |       |   |   |       |       \---.bin
+|           |       |   |   |       |   \---node_modules
+|           |       |   |   |       |       \---.bin
+|           |       |   |   |       |   \---lib
+|           |       |   |   |       |       \---zh-tw
+|           |       |   |   |       \---typescript-eslint
+|           |       |   |   |           \---node_modules
+|           |       |   |   |               \---.bin
+|           |       |   |   \---typescript-config
+|           |       |   |   \---dist
+|           |       |   |   \---dist
+|           |       |   |   |   |   \---formatters
+|           |       |   |   |   |   \---js
+|           |       |   |   |   |       \---source-code
+|           |       |   |   |   |           \---token-store
+|           |       |   |   |   |   \---code-path-analysis
+|           |       |   |   |   |   \---utils
+|           |       |   |   |   |       \---unicode
+|           |       |   |   |   \---types
+|           |       |   |   \---node_modules
+|           |       |   |       \---.bin
+|           |       |   |   \---dist
+|           |       |   |       |   \---shared
+|           |       |   |       |       \---src
+|           |       |   |       \---umd
+|           |       |   |   \---dist
+|           |       |   |   \---cjs
+|           |       |   |   \---cjs
+|           |       |   |   |   \---es5
+|           |       |   |   \---src
+|           |       |   |       \---lib
+|           |       |   |   \---dist
+|           |       |   |   \---dist
+|           |       |   |   \---lib
+|           |       |   |       \---zh-tw
+|           |       |   \---zod
+|           |       |       |   |   \---tests
+|           |       |       |   |   |   \---tests
+|           |       |       |   |   |   \---tests
+|           |       |       |   |   |       \---locales
+|           |       |       |   |   \---mini
+|           |       |       |   |       \---tests
+|           |       |       |   \---v4-mini
+|           |       |       |   \---locales
+|           |       |       |   \---mini
+|           |       |       \---v4-mini
+|           |       \---src
+|           |           \---styles
+|           |   |   |   \---formatters
+|           |   |   |   \---js
+|           |   |   |       \---source-code
+|           |   |   |           \---token-store
+|           |   |   |   \---code-path-analysis
+|           |   |   |   \---utils
+|           |   |   |       \---unicode
+|           |   |   \---types
+|           |   \---node_modules
+|           |       \---.bin
+|           |   \---dist
+|           |       |   \---shared
+|           |       |       \---src
+|           |       \---umd
+|           |   |   |   |   \---plugins
+|           |   |   |   |   \---__mocks__
+|           |   |   |   |   \---formatter
+|           |   |   |   |   \---object.assign
+|           |   |   |   |   \---pages
+|           |   |   |   |   |   \---blocks
+|           |   |   |   |   |       |   \---loaders
+|           |   |   |   |   |       \---images
+|           |   |   |   |   |   |   \---src
+|           |   |   |   |   |   |       \---runtime
+|           |   |   |   |   |   |   \---src
+|           |   |   |   |   |   |   \---runtime
+|           |   |   |   |   |   |   \---src
+|           |   |   |   |   |   \---resolve-url-loader
+|           |   |   |   |   |       \---lib
+|           |   |   |   |   \---plugins
+|           |   |   |   |       |   \---src
+|           |   |   |   |       \---wellknown-errors-plugin
+|           |   |   |   \---webpack-config-rules
+|           |   |   |   \---internal
+|           |   |   |   |   |   \---reducers
+|           |   |   |   |   \---styles
+|           |   |   |   |   \---hot-reloader
+|           |   |   |   |       \---pages
+|           |   |   |   \---tracing
+|           |   |   |   |   \---toolbox-optimizer
+|           |   |   |   |   \---runtime
+|           |   |   |   |       |   \---esm
+|           |   |   |   |       \---regenerator
+|           |   |   |   |   \---primitives
+|           |   |   |   |   \---accept
+|           |   |   |   |   \---interceptors
+|           |   |   |   |       \---ClientRequest
+|           |   |   |   |   \---triples
+|           |   |   |   |   |   |   \---local
+|           |   |   |   |   |   \---local
+|           |   |   |   |   \---react-refresh-utils
+|           |   |   |   |       \---dist
+|           |   |   |   |           \---internal
+|           |   |   |   |   \---api
+|           |   |   |   |   \---og
+|           |   |   |   |       \---satori
+|           |   |   |   |   \---hmr
+|           |   |   |   |   \---cjs
+|           |   |   |   |   \---cjs
+|           |   |   |   |   \---cjs
+|           |   |   |   |   \---cjs
+|           |   |   |   |   \---cjs
+|           |   |   |   |   \---cjs
+|           |   |   |   |   \---cjs
+|           |   |   |   |   \---cjs
+|           |   |   |   |   \---cjs
+|           |   |   |   |   \---cjs
+|           |   |   |   |   \---cjs
+|           |   |   |   |   \---cjs
+|           |   |   |   \---zod-validation-error
+|           |   |   |   |   |   \---plugins
+|           |   |   |   |   |   \---formatter
+|           |   |   |   |   |   \---object.assign
+|           |   |   |   |   |   \---pages
+|           |   |   |   |   |   |   \---blocks
+|           |   |   |   |   |   |       |   \---loaders
+|           |   |   |   |   |   |       \---images
+|           |   |   |   |   |   |   |   \---src
+|           |   |   |   |   |   |   |       \---runtime
+|           |   |   |   |   |   |   |   \---src
+|           |   |   |   |   |   |   |   \---runtime
+|           |   |   |   |   |   |   |   \---src
+|           |   |   |   |   |   |   \---resolve-url-loader
+|           |   |   |   |   |   |       \---lib
+|           |   |   |   |   |   \---plugins
+|           |   |   |   |   |       |   \---src
+|           |   |   |   |   |       \---wellknown-errors-plugin
+|           |   |   |   |   \---webpack-config-rules
+|           |   |   |   |   |   |   \---reducers
+|           |   |   |   |   |   \---styles
+|           |   |   |   |   |   \---hot-reloader
+|           |   |   |   |   |       \---pages
+|           |   |   |   |   \---tracing
+|           |   |   |   |   \---routes
+|           |   |   |   |   |   \---types
+|           |   |   |   |   \---typescript
+|           |   |   |   |   |   \---font
+|           |   |   |   |   \---userspace
+|           |   |   |   |       |   \---errors
+|           |   |   |   |       \---pages
+|           |   |   |   |   |   \---node
+|           |   |   |   |   |   \---rsc
+|           |   |   |   |   |   \---browser-logs
+|           |   |   |   |   |   \---trace
+|           |   |   |   |   |   |   \---pages
+|           |   |   |   |   |   \---request
+|           |   |   |   |   |   |   \---helpers
+|           |   |   |   |   |   |       \---file-reader
+|           |   |   |   |   |   \---helpers
+|           |   |   |   |   |       \---manifest-loaders
+|           |   |   |   |   |   |   \---vendored
+|           |   |   |   |   |   |       \---ssr
+|           |   |   |   |   |   |   \---helpers
+|           |   |   |   |   |   |   \---vendored
+|           |   |   |   |   |   |       \---contexts
+|           |   |   |   |   |   \---pages-api
+|           |   |   |   |   |   \---rules
+|           |   |   |   |   \---web
+|           |   |   |   |       \---spec-extension
+|           |   |   |   |           \---adapters
+|           |   |   |   \---shared
+|           |   |   |       \---lib
+|           |   |   |           |   \---utils
+|           |   |   |           \---utils
+|           |   |   |   |   \---server
+|           |   |   |   \---testmode
+|           |   |   |       \---proxy
+|           |   |   |   \---routes
+|           |   |   |   |   \---types
+|           |   |   |   \---typescript
+|           |   |   |   |   |   |   \---hooks
+|           |   |   |   |   |   |   |   \---issues-tab
+|           |   |   |   |   |   |   \---resize
+|           |   |   |   |   |   |   |   \---dev-tools-info
+|           |   |   |   |   |   |   |   \---error-feedback
+|           |   |   |   |   |   |   \---overlay
+|           |   |   |   |   |   \---version-staleness-info
+|           |   |   |   |   |   \---runtime-error
+|           |   |   |   |   |   \---thumbs
+|           |   |   |   |   \---utils
+|           |   |   |   |   \---font
+|           |   |   |   \---userspace
+|           |   |   |       |   \---errors
+|           |   |   |       \---pages
+|           |   |   |   |   \---node
+|           |   |   |   |   \---rsc
+|           |   |   |   |   \---browser-logs
+|           |   |   |   |   \---trace
+|           |   |   |   |   |   \---pages
+|           |   |   |   |   \---request
+|           |   |   |   |   |   \---helpers
+|           |   |   |   |   |       \---file-reader
+|           |   |   |   |   \---helpers
+|           |   |   |   |       \---manifest-loaders
+|           |   |   |   |   |   \---vendored
+|           |   |   |   |   |       \---ssr
+|           |   |   |   |   |   \---helpers
+|           |   |   |   |   |   \---vendored
+|           |   |   |   |   |       \---contexts
+|           |   |   |   |   \---pages-api
+|           |   |   |   |   \---rules
+|           |   |   |   \---web
+|           |   |   |       \---spec-extension
+|           |   |   |           \---adapters
+|           |   |   |   \---lib
+|           |   |   |       |   \---utils
+|           |   |   |       \---utils
+|           |   |   |   \---types
+|           |   |   |   \---events
+|           |   |   \---trace
+|           |   |       \---report
+|           |   |   \---testmode
+|           |   |       \---playwright
+|           |   |   \---local
+|           |   |   \---compat
+|           |   \---types
+|           |   \---dist
+|           |   \---cjs
+|           |   \---cjs
+|           \---typescript
+|               \---lib
+|                   \---zh-tw
+|   |   |   \---node_modules
+|   |   |       \---@alloc
+|   |   |           \---quick-lru
+|   |   |   \---node_modules
+|   |   |       |   \---remapping
+|   |   |       |       \---dist
+|   |   |       |           \---types
+|   |   |       \---@jridgewell
+|   |   |           |   \---types
+|   |   |           \---trace-mapping
+|   |   |               \---types
+|   |   |   \---node_modules
+|   |   |       |   \---runtime-corejs3
+|   |   |       |       |   \---symbol
+|   |   |       |       |   \---symbol
+|   |   |       |       |   \---esm
+|   |   |       |       \---regenerator
+|   |   |       \---core-js-pure
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   \---weak-set
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   \---weak-set
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   \---weak-set
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   \---weak-set
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   \---weak-set
+|   |   |           \---web
+|   |   |   \---node_modules
+|   |   |       |   \---source-map-support
+|   |   |       \---@jridgewell
+|   |   |           \---trace-mapping
+|   |   |               \---dist
+|   |   |                   \---types
+|   |   |   \---node_modules
+|   |   |       |   |   \---dist
+|   |   |       |   |       |   \---std__path
+|   |   |       |   |       \---esm
+|   |   |       |   |           \---std__path
+|   |   |       |   \---object-schema
+|   |   |       |       \---dist
+|   |   |       |           \---esm
+|   |   |       |   \---src
+|   |   |       \---minimatch
+|   |   |   \---node_modules
+|   |   |       \---@eslint
+|   |   |           \---config-helpers
+|   |   |               \---dist
+|   |   |                   \---esm
+|   |   |   \---node_modules
+|   |   |       |   \---core
+|   |   |       |       \---dist
+|   |   |       |           \---esm
+|   |   |       \---@types
+|   |   |           \---json-schema
+|   |   |   \---node_modules
+|   |   |       |   \---eslintrc
+|   |   |       |       |   \---types
+|   |   |       |       \---node_modules
+|   |   |       |           \---.bin
+|   |   |       |   |   \---refs
+|   |   |       |   \---scripts
+|   |   |       |   \---src
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---lib
+|   |   |       |       \---type
+|   |   |       \---strip-json-comments
+|   |   |   \---node_modules
+|   |   |       \---@eslint
+|   |   |           \---js
+|   |   |               |   \---configs
+|   |   |               \---types
+|   |   |   \---node_modules
+|   |   |       \---@eslint
+|   |   |           \---js
+|   |   |               |   \---configs
+|   |   |               \---types
+|   |   |   \---node_modules
+|   |   |       \---@eslint
+|   |   |           \---object-schema
+|   |   |               \---dist
+|   |   |                   \---esm
+|   |   |   \---node_modules
+|   |   |       |   |   \---dist
+|   |   |       |   |       \---esm
+|   |   |       |   \---plugin-kit
+|   |   |       |       \---dist
+|   |   |       |           \---esm
+|   |   |       \---levn
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       |   \---eslint-utils
+|   |   |       |       \---node_modules
+|   |   |       |           \---.bin
+|   |   |       |   |   |   \---formatters
+|   |   |       |   |   |   \---js
+|   |   |       |   |   |       \---source-code
+|   |   |       |   |   |           \---token-store
+|   |   |       |   |   |   \---code-path-analysis
+|   |   |       |   |   |   \---utils
+|   |   |       |   |   |       \---unicode
+|   |   |       |   |   \---types
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---eslint-visitor-keys
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---@eslint-community
+|   |   |           \---regexpp
+|   |   |   \---node_modules
+|   |   |       \---@humanfs
+|   |   |           \---core
+|   |   |               \---src
+|   |   |   \---node_modules
+|   |   |       |   |   \---src
+|   |   |       |   \---node
+|   |   |       |       \---src
+|   |   |       \---@humanwhocodes
+|   |   |           \---retry
+|   |   |               \---dist
+|   |   |   \---node_modules
+|   |   |       \---@humanwhocodes
+|   |   |           \---module-importer
+|   |   |               \---src
+|   |   |   \---node_modules
+|   |   |       \---@humanwhocodes
+|   |   |           \---retry
+|   |   |               \---dist
+|   |   |   \---node_modules
+|   |   |       \---@humanwhocodes
+|   |   |           \---retry
+|   |   |               \---dist
+|   |   |   \---node_modules
+|   |   |       \---@img
+|   |   |           \---sharp-win32-x64
+|   |   |               \---lib
+|   |   |   \---node_modules
+|   |   |       |   \---fs-minipass
+|   |   |       |       \---dist
+|   |   |       |           \---esm
+|   |   |       \---minipass
+|   |   |           \---dist
+|   |   |               \---esm
+|   |   |   \---node_modules
+|   |   |       \---@jridgewell
+|   |   |           |   \---types
+|   |   |           |   \---types
+|   |   |           \---trace-mapping
+|   |   |               \---types
+|   |   |   \---node_modules
+|   |   |       \---@jridgewell
+|   |   |           \---resolve-uri
+|   |   |               \---dist
+|   |   |                   \---types
+|   |   |   \---node_modules
+|   |   |       \---@jridgewell
+|   |   |           \---sourcemap-codec
+|   |   |               \---types
+|   |   |   \---node_modules
+|   |   |       \---@jridgewell
+|   |   |           |   \---dist
+|   |   |           |       \---types
+|   |   |           |   \---types
+|   |   |           \---trace-mapping
+|   |   |               \---types
+|   |   |   \---node_modules
+|   |   |       \---@jridgewell
+|   |   |           |   \---dist
+|   |   |           |       \---types
+|   |   |           |   \---types
+|   |   |           \---trace-mapping
+|   |   |               \---dist
+|   |   |                   \---types
+|   |   |   \---node_modules
+|   |   |       \---@next
+|   |   |           \---env
+|   |   |               \---dist
+|   |   |   \---node_modules
+|   |   |       |   \---eslint-plugin-next
+|   |   |       |       \---dist
+|   |   |       |           \---utils
+|   |   |       \---fast-glob
+|   |   |           \---out
+|   |   |               |   \---transformers
+|   |   |               \---utils
+|   |   |   \---node_modules
+|   |   |       \---@next
+|   |   |           \---swc-win32-x64-msvc
+|   |   |   \---node_modules
+|   |   |       |   |   \---out
+|   |   |       |   |       \---utils
+|   |   |       |   \---fs.stat
+|   |   |       |       \---out
+|   |   |       |           \---types
+|   |   |       \---run-parallel
+|   |   |   \---node_modules
+|   |   |       \---@nodelib
+|   |   |           \---fs.stat
+|   |   |               \---out
+|   |   |                   \---types
+|   |   |   \---node_modules
+|   |   |       |   |   \---out
+|   |   |       |   |       \---utils
+|   |   |       |   \---fs.walk
+|   |   |       |       \---out
+|   |   |       |           \---types
+|   |   |       \---fastq
+|   |   |           |   \---workflows
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---react-compose-refs
+|   |   |       |       \---dist
+|   |   |       |   \---react
+|   |   |       |       \---ts5.0
+|   |   |       |           \---v18
+|   |   |       |               \---ts5.0
+|   |   |       \---react
+|   |   |           \---cjs
+|   |   |   \---node_modules
+|   |   |       |   |   \---dist
+|   |   |       |   \---react-slot
+|   |   |       |       \---dist
+|   |   |       |   \---react
+|   |   |       |       \---ts5.0
+|   |   |       |           \---v18
+|   |   |       |               \---ts5.0
+|   |   |       \---react
+|   |   |           \---cjs
+|   |   |   \---node_modules
+|   |   |       |   \---helpers
+|   |   |       |       \---_
+|   |   |       |           \---_write_only_error
+|   |   |       \---tslib
+|   |   |           \---modules
+|   |   |   \---node_modules
+|   |   |       |   \---remapping
+|   |   |       |       \---dist
+|   |   |       |           \---types
+|   |   |       |   \---node
+|   |   |       |       \---node_modules
+|   |   |       |           \---.bin
+|   |   |       |   \---lib
+|   |   |       |       \---util
+|   |   |       |   \---lib
+|   |   |       |   \---node
+|   |   |       |   \---dist
+|   |   |       |   \---lib
+|   |   |       \---tailwindcss
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       \---@tailwindcss
+|   |   |           \---oxide-win32-x64-msvc
+|   |   |   \---node_modules
+|   |   |       |   |   \---scripts
+|   |   |       |   \---oxide-win32-x64-msvc
+|   |   |       |   \---lib
+|   |   |       \---tar
+|   |   |           |   \---esm
+|   |   |           \---node_modules
+|   |   |               \---.bin
+|   |   |   \---node_modules
+|   |   |       |   \---quick-lru
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   |   \---scripts
+|   |   |       |   \---postcss
+|   |   |       |       \---dist
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---tailwindcss
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       \---@tootallnate
+|   |   |           \---quickjs-emscripten
+|   |   |               \---dist
+|   |   |                   \---generated
+|   |   |   \---node_modules
+|   |   |       \---@tsconfig
+|   |   |           \---node10
+|   |   |   \---node_modules
+|   |   |       \---@tsconfig
+|   |   |           \---node12
+|   |   |   \---node_modules
+|   |   |       \---@tsconfig
+|   |   |           \---node14
+|   |   |   \---node_modules
+|   |   |       \---@tsconfig
+|   |   |           \---node16
+|   |   |   \---node_modules
+|   |   |       |   |   |   \---templates
+|   |   |       |   |   |       |   \---templates
+|   |   |       |   |   |       \---simple-ts
+|   |   |       |   |   |           \---templates
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   \---workspaces
+|   |   |       |       \---node_modules
+|   |   |       |           \---.bin
+|   |   |       |   \---typings
+|   |   |       |   \---lib
+|   |   |       |       \---util
+|   |   |       |   \---lib
+|   |   |       |       \---utils
+|   |   |       |   \---dist
+|   |   |       |       \---esm
+|   |   |       |   |   \---actions
+|   |   |       |   |   \---.bin
+|   |   |       |   \---types
+|   |   |       |   \---dist
+|   |   |       |   |   \---transpilers
+|   |   |       |   |   \---.bin
+|   |   |       |   \---transpilers
+|   |   |       \---validate-npm-package-name
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       |   \---workspaces
+|   |   |       |       \---node_modules
+|   |   |       |           \---.bin
+|   |   |       |   \---typings
+|   |   |       |   \---lib
+|   |   |       |   \---out
+|   |   |       |       |   \---transformers
+|   |   |       |       \---utils
+|   |   |       |   \---lib
+|   |   |       |       \---util
+|   |   |       |   \---lib
+|   |   |       |       \---utils
+|   |   |       |   \---lib
+|   |   |       |       \---type
+|   |   |       |   \---ranges
+|   |   |       \---update-check
+|   |   |   \---node_modules
+|   |   |       \---@types
+|   |   |           \---estree
+|   |   |   \---node_modules
+|   |   |       \---@types
+|   |   |           \---node
+|   |   |               \---ts5.6
+|   |   |   \---node_modules
+|   |   |       |   |   \---lib
+|   |   |       |   |       \---utils
+|   |   |       |   \---through
+|   |   |       \---rxjs
+|   |   |           |   |   \---dom
+|   |   |           |   \---operator
+|   |   |           |   |   \---dom
+|   |   |           |   \---util
+|   |   |           |   \---update-6_0_0
+|   |   |           |   \---dom
+|   |   |           |   |   |   \---dom
+|   |   |           |   |   \---operator
+|   |   |           |   |   |   \---dom
+|   |   |           |   |   \---util
+|   |   |           |   |   \---dom
+|   |   |           |   \---webSocket
+|   |   |           |   |   |   \---dom
+|   |   |           |   |   \---util
+|   |   |           |   \---webSocket
+|   |   |           \---_esm5
+|   |   |               |   |   \---dom
+|   |   |               |   \---util
+|   |   |               \---webSocket
+|   |   |   \---node_modules
+|   |   |       \---@types
+|   |   |           \---json-schema
+|   |   |   \---node_modules
+|   |   |       |   \---minimatch
+|   |   |       \---minimatch
+|   |   |           \---dist
+|   |   |               \---esm
+|   |   |   \---node_modules
+|   |   |       |   \---node
+|   |   |       |       \---ts5.6
+|   |   |       \---undici-types
+|   |   |   \---node_modules
+|   |   |       \---@types
+|   |   |           |   \---ts5.0
+|   |   |           |       \---v18
+|   |   |           |           \---ts5.0
+|   |   |           \---react-dom
+|   |   |               \---test-utils
+|   |   |   \---node_modules
+|   |   |       |   \---react
+|   |   |       |       \---ts5.0
+|   |   |       |           \---v18
+|   |   |       |               \---ts5.0
+|   |   |       \---csstype
+|   |   |   \---node_modules
+|   |   |       \---@types
+|   |   |           |   \---ts5.6
+|   |   |           \---through
+|   |   |   \---node_modules
+|   |   |       \---@types
+|   |   |           \---tinycolor2
+|   |   |   \---node_modules
+|   |   |       |   \---regexpp
+|   |   |       |   |   |   |   \---flat
+|   |   |       |   |   |   |   \---prefer-optional-chain-utils
+|   |   |       |   |   |   \---util
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   |   \---dist
+|   |   |       |   |       \---variable
+|   |   |       |   |   |   \---typeOrValueSpecifiers
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   |   |   |   \---eslint-utils
+|   |   |       |   |   |   |   \---eslint
+|   |   |       |   |   |   \---ts-utils
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   \---visitor-keys
+|   |   |       |       \---dist
+|   |   |       |   |   |   \---formatters
+|   |   |       |   |   |   \---js
+|   |   |       |   |   |       \---source-code
+|   |   |       |   |   |           \---token-store
+|   |   |       |   |   |   \---code-path-analysis
+|   |   |       |   |   |   \---utils
+|   |   |       |   |   |       \---unicode
+|   |   |       |   |   \---types
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---lib
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---typescript
+|   |   |           \---lib
+|   |   |               \---zh-tw
+|   |   |   \---node_modules
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   |   \---dist
+|   |   |       |   |       \---variable
+|   |   |       |   |   \---dist
+|   |   |       |   |       \---generated
+|   |   |       |   |   |   \---ts-estree
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   \---visitor-keys
+|   |   |       |       \---dist
+|   |   |       |   \---src
+|   |   |       |   |   |   \---formatters
+|   |   |       |   |   |   \---js
+|   |   |       |   |   |       \---source-code
+|   |   |       |   |   |           \---token-store
+|   |   |       |   |   |   \---code-path-analysis
+|   |   |       |   |   |   \---utils
+|   |   |       |   |   |       \---unicode
+|   |   |       |   |   \---types
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---typescript
+|   |   |           \---lib
+|   |   |               \---zh-tw
+|   |   |   \---node_modules
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   \---types
+|   |   |       |       \---dist
+|   |   |       |           \---generated
+|   |   |       |   \---src
+|   |   |       \---typescript
+|   |   |           \---lib
+|   |   |               \---zh-tw
+|   |   |   \---node_modules
+|   |   |       \---@typescript-eslint
+|   |   |           |   \---dist
+|   |   |           |       \---variable
+|   |   |           |   \---dist
+|   |   |           |       \---generated
+|   |   |           \---visitor-keys
+|   |   |               \---dist
+|   |   |   \---node_modules
+|   |   |       |   \---tsconfig-utils
+|   |   |       |       \---node_modules
+|   |   |       |           \---.bin
+|   |   |       \---typescript
+|   |   |           \---lib
+|   |   |               \---zh-tw
+|   |   |   \---node_modules
+|   |   |       |   |   |   \---typeOrValueSpecifiers
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   |   \---dist
+|   |   |       |   |       \---generated
+|   |   |       |   |   |   \---ts-estree
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   \---utils
+|   |   |       |       |   |   \---eslint-utils
+|   |   |       |       |   |   \---eslint
+|   |   |       |       |   \---ts-utils
+|   |   |       |       \---node_modules
+|   |   |       |           \---.bin
+|   |   |       |   \---src
+|   |   |       |   |   |   \---formatters
+|   |   |       |   |   |   \---js
+|   |   |       |   |   |       \---source-code
+|   |   |       |   |   |           \---token-store
+|   |   |       |   |   |   \---code-path-analysis
+|   |   |       |   |   |   \---utils
+|   |   |       |   |   |       \---unicode
+|   |   |       |   |   \---types
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---typescript
+|   |   |           \---lib
+|   |   |               \---zh-tw
+|   |   |   \---node_modules
+|   |   |       \---@typescript-eslint
+|   |   |           \---types
+|   |   |               \---dist
+|   |   |                   \---generated
+|   |   |   \---node_modules
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   |   \---dist
+|   |   |       |   |       \---generated
+|   |   |       |   |   |   \---ts-estree
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   \---visitor-keys
+|   |   |       |       \---dist
+|   |   |       |   \---src
+|   |   |       |   \---out
+|   |   |       |       |   \---transformers
+|   |   |       |       \---utils
+|   |   |       |   \---dist
+|   |   |       |       \---esm
+|   |   |       |   \---ranges
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---typescript
+|   |   |           \---lib
+|   |   |               \---zh-tw
+|   |   |   \---node_modules
+|   |   |       |   \---eslint-utils
+|   |   |       |       \---node_modules
+|   |   |       |           \---.bin
+|   |   |       |   |   \---dist
+|   |   |       |   |       \---variable
+|   |   |       |   |   \---dist
+|   |   |       |   |       \---generated
+|   |   |       |   |   |   \---ts-estree
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   \---utils
+|   |   |       |       |   |   \---eslint-utils
+|   |   |       |       |   |   \---eslint
+|   |   |       |       |   \---ts-utils
+|   |   |       |       \---node_modules
+|   |   |       |           \---.bin
+|   |   |       |   |   |   \---formatters
+|   |   |       |   |   |   \---js
+|   |   |       |   |   |       \---source-code
+|   |   |       |   |   |           \---token-store
+|   |   |       |   |   |   \---code-path-analysis
+|   |   |       |   |   |   \---utils
+|   |   |       |   |   |       \---unicode
+|   |   |       |   |   \---types
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---typescript
+|   |   |           \---lib
+|   |   |               \---zh-tw
+|   |   |   \---node_modules
+|   |   |       |   |   \---dist
+|   |   |       |   |       \---generated
+|   |   |       |   \---visitor-keys
+|   |   |       |       \---dist
+|   |   |       \---eslint-visitor-keys
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       |   \---dist
+|   |   |       \---acorn-jsx
+|   |   |           \---node_modules
+|   |   |               \---.bin
+|   |   |   \---node_modules
+|   |   |       |   \---dist
+|   |   |       \---acorn-walk
+|   |   |           \---node_modules
+|   |   |               \---.bin
+|   |   |   \---node_modules
+|   |   |       \---acorn
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       \---agent-base
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       \---indent-string
+|   |   |   \---node_modules
+|   |   |       |   |   \---refs
+|   |   |       |   \---scripts
+|   |   |       |   \---es6
+|   |   |       |   \---test
+|   |   |       |   \---spec
+|   |   |       |       \---fixtures
+|   |   |       \---uri-js
+|   |   |           \---dist
+|   |   |               \---esnext
+|   |   |                   \---schemes
+|   |   |   \---node_modules
+|   |   |       \---type-fest
+|   |   |           \---ts41
+|   |   |   \---node_modules
+|   |   |       \---ansi-regex
+|   |   |   \---node_modules
+|   |   |       \---color-convert
+|   |   |   \---node_modules
+|   |   |       \---color-convert
+|   |   |   \---node_modules
+|   |   |       \---arg
+|   |   |   \---node_modules
+|   |   |       \---argparse
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---is-array-buffer
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---records
+|   |   |       |   \---operations
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---math-intrinsics
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---array-union
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---records
+|   |   |       |   \---operations
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---es-shim-unscopables
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---records
+|   |   |       |   \---operations
+|   |   |       \---es-shim-unscopables
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---records
+|   |   |       |   \---operations
+|   |   |       \---es-shim-unscopables
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---records
+|   |   |       |   \---operations
+|   |   |       |   \---test
+|   |   |       \---es-shim-unscopables
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---records
+|   |   |       |   \---operations
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---is-array-buffer
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   |   \---workflows
+|   |   |       |   \---lib
+|   |   |       \---tslib
+|   |   |           \---modules
+|   |   |   \---node_modules
+|   |   |       \---async-function
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---possible-typed-array-names
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---balanced-match
+|   |   |           \---.github
+|   |   |   \---node_modules
+|   |   |       \---base64-js
+|   |   |   \---node_modules
+|   |   |       \---basic-ftp
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---readable-stream
+|   |   |           \---lib
+|   |   |               \---internal
+|   |   |                   \---streams
+|   |   |   \---node_modules
+|   |   |       |   \---.github
+|   |   |       \---concat-map
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---.github
+|   |   |       \---brace-expansion
+|   |   |           \---.github
+|   |   |   \---node_modules
+|   |   |       |   \---lib
+|   |   |       \---fill-range
+|   |   |   \---node_modules
+|   |   |       \---ieee754
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---function-bind
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---set-function-length
+|   |   |           \---.github
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---get-intrinsic
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---callsites
+|   |   |   \---node_modules
+|   |   |       |   \---vendor
+|   |   |       \---upper-case
+|   |   |   \---node_modules
+|   |   |       \---caniuse-lite
+|   |   |           |   \---regions
+|   |   |           \---dist
+|   |   |               \---unpacker
+|   |   |   \---node_modules
+|   |   |       |   \---types
+|   |   |       \---supports-color
+|   |   |   \---node_modules
+|   |   |       |   \---source
+|   |   |       \---supports-color
+|   |   |   \---node_modules
+|   |   |       |   \---source
+|   |   |       \---supports-color
+|   |   |   \---node_modules
+|   |   |       |   \---vendor
+|   |   |       \---upper-case-first
+|   |   |   \---node_modules
+|   |   |       \---chardet
+|   |   |           \---encoding
+|   |   |   \---node_modules
+|   |   |       \---chownr
+|   |   |           \---dist
+|   |   |               \---esm
+|   |   |   \---node_modules
+|   |   |       |   \---dist
+|   |   |       \---clsx
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       \---clean-stack
+|   |   |   \---node_modules
+|   |   |       \---restore-cursor
+|   |   |   \---node_modules
+|   |   |       \---cli-spinners
+|   |   |   \---node_modules
+|   |   |       \---cli-width
+|   |   |           \---.nyc_output
+|   |   |               \---processinfo
+|   |   |   \---node_modules
+|   |   |       \---client-only
+|   |   |   \---node_modules
+|   |   |       \---clone
+|   |   |   \---node_modules
+|   |   |       \---clsx
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       \---color-name
+|   |   |   \---node_modules
+|   |   |       \---color-name
+|   |   |   \---node_modules
+|   |   |       \---color-name
+|   |   |   \---node_modules
+|   |   |       \---color-name
+|   |   |   \---node_modules
+|   |   |       \---simple-swizzle
+|   |   |   \---node_modules
+|   |   |       \---color-string
+|   |   |   \---node_modules
+|   |   |       \---commander
+|   |   |           \---typings
+|   |   |   \---node_modules
+|   |   |       \---concat-map
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---upper-case
+|   |   |   \---node_modules
+|   |   |       \---core-js-pure
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   \---weak-set
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   \---weak-set
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   \---weak-set
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   \---weak-set
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   |   \---virtual
+|   |   |           |   \---weak-set
+|   |   |           \---web
+|   |   |   \---node_modules
+|   |   |       \---create-require
+|   |   |   \---node_modules
+|   |   |       |   |   \---util
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---which
+|   |   |           \---bin
+|   |   |   \---node_modules
+|   |   |       \---csstype
+|   |   |   \---node_modules
+|   |   |       \---data-uri-to-buffer
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---is-data-view
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---is-data-view
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---is-data-view
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---src
+|   |   |       \---ms
+|   |   |   \---node_modules
+|   |   |       \---deep-extend
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---deep-is
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---defaults
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---gopd
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   \---test
+|   |   |       \---object-keys
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   |   \---workflows
+|   |   |       |   \---lib
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---esprima
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---slash
+|   |   |   \---node_modules
+|   |   |       \---detect-libc
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---diff
+|   |   |           \---lib
+|   |   |               \---util
+|   |   |   \---node_modules
+|   |   |       \---path-type
+|   |   |   \---node_modules
+|   |   |       |   \---lib
+|   |   |       \---esutils
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---no-case
+|   |   |           \---vendor
+|   |   |   \---node_modules
+|   |   |       \---dotenv
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---gopd
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---emoji-regex
+|   |   |           \---es2015
+|   |   |   \---node_modules
+|   |   |       |   \---lib
+|   |   |       |       \---util
+|   |   |       \---tapable
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---records
+|   |   |       |   \---operations
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       |   \---.github
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---browser
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---which-typed-array
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---es-define-property
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---es-errors
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---records
+|   |   |       |   \---operations
+|   |   |       |   \---test
+|   |   |       |   |   \---helpers
+|   |   |       |   \---WrapForValidIteratorPrototype
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---safe-array-concat
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---es-object-atoms
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       \---hasown
+|   |   |           \---.github
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---hasown
+|   |   |           \---.github
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---is-symbol
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---escape-string-regexp
+|   |   |   \---node_modules
+|   |   |       \---escape-string-regexp
+|   |   |   \---node_modules
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---dist
+|   |   |       |   \---lib
+|   |   |       \---source-map
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       |   |   |   \---formatters
+|   |   |       |   |   |   \---js
+|   |   |       |   |   |       \---source-code
+|   |   |       |   |   |           \---token-store
+|   |   |       |   |   |   \---code-path-analysis
+|   |   |       |   |   |   \---utils
+|   |   |       |   |   |       \---unicode
+|   |   |       |   |   \---types
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---eslint-config-prettier
+|   |   |           \---node_modules
+|   |   |               \---.bin
+|   |   |   \---node_modules
+|   |   |       \---eslint-plugin-only-warn
+|   |   |           |   \---workflows
+|   |   |           \---tests
+|   |   |   \---node_modules
+|   |   |       |   |   |   \---formatters
+|   |   |       |   |   |   \---js
+|   |   |       |   |   |       \---source-code
+|   |   |       |   |   |           \---token-store
+|   |   |       |   |   |   \---code-path-analysis
+|   |   |       |   |   |   \---utils
+|   |   |       |   |   |       \---unicode
+|   |   |       |   |   \---types
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---eslint-plugin-react-hooks
+|   |   |           \---node_modules
+|   |   |               \---.bin
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---lib
+|   |   |       |   |   \---helpers
+|   |   |       |   \---WrapForValidIteratorPrototype
+|   |   |       |   |   |   \---formatters
+|   |   |       |   |   |   \---js
+|   |   |       |   |   |       \---source-code
+|   |   |       |   |   |           \---token-store
+|   |   |       |   |   |   \---code-path-analysis
+|   |   |       |   |   |   \---utils
+|   |   |       |   |   |       \---unicode
+|   |   |       |   |   \---types
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   |   \---util
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---.github
+|   |   |       |   |   \---values
+|   |   |       |   |       \---expressions
+|   |   |       |   |   \---values
+|   |   |       |   |       \---expressions
+|   |   |       |   \---__tests__
+|   |   |       |       \---src
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---test
+|   |   |       |       |   \---abc
+|   |   |       |       |   |   \---aaa
+|   |   |       |       |   |   \---aaa
+|   |   |       |       |   \---zmodules
+|   |   |       |       |       \---bbb
+|   |   |       |       |   |   \---ccc
+|   |   |       |       |   \---y
+|   |   |       |       |       \---ccc
+|   |   |       |       |   \---deep_ref
+|   |   |       |       |   \---bbb
+|   |   |       |       |   |   \---packages
+|   |   |       |       |   |       \---package-b
+|   |   |       |       |   |   \---mylib
+|   |   |       |       |   |   \---lib
+|   |   |       |       |   |   \---foo
+|   |   |       |       |   |   \---foo
+|   |   |       |       |   |   \---_
+|   |   |       |       |   |       \---symlink_target
+|   |   |       |       |   \---without_basedir
+|   |   |       |       \---shadowed_core
+|   |   |       |           \---node_modules
+|   |   |       |               \---util
+|   |   |       |   \---bin
+|   |   |       |   \---test
+|   |   |       \---string.prototype.repeat
+|   |   |           \---tests
+|   |   |   \---node_modules
+|   |   |       |   \---lib
+|   |   |       |   |   |   \---formatters
+|   |   |       |   |   |   \---js
+|   |   |       |   |   |       \---source-code
+|   |   |       |   |   |           \---token-store
+|   |   |       |   |   |   \---code-path-analysis
+|   |   |       |   |   |   \---utils
+|   |   |       |   |   |       \---unicode
+|   |   |       |   |   \---types
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---turbo
+|   |   |           \---bin
+|   |   |   \---node_modules
+|   |   |       |   \---lib
+|   |   |       \---estraverse
+|   |   |   \---node_modules
+|   |   |       \---eslint-visitor-keys
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---eslint-visitor-keys
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       |   |   \---dist
+|   |   |       |   |       |   \---std__path
+|   |   |       |   |       \---esm
+|   |   |       |   |           \---std__path
+|   |   |       |   |   \---dist
+|   |   |       |   |       \---esm
+|   |   |       |   |   \---dist
+|   |   |       |   |       \---esm
+|   |   |       |   |   |   \---types
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   |   |   \---configs
+|   |   |       |   |   \---types
+|   |   |       |   \---plugin-kit
+|   |   |       |       \---dist
+|   |   |       |           \---esm
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   \---regexpp
+|   |   |       |   \---node
+|   |   |       |       \---src
+|   |   |       |   |   \---src
+|   |   |       |   \---retry
+|   |   |       |       \---dist
+|   |   |       |   \---json-schema
+|   |   |       |   |   \---refs
+|   |   |       |   \---scripts
+|   |   |       |   \---source
+|   |   |       |   |   \---util
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---src
+|   |   |       |   |   |   \---formatters
+|   |   |       |   |   |   \---js
+|   |   |       |   |   |       \---source-code
+|   |   |       |   |   |           \---token-store
+|   |   |       |   |   |   \---code-path-analysis
+|   |   |       |   |   |   \---utils
+|   |   |       |   |   |       \---unicode
+|   |   |       |   |   \---types
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---lib
+|   |   |       |   \---lib
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---dist
+|   |   |       |   \---lib
+|   |   |       |   \---es6
+|   |   |       |   \---lib
+|   |   |       |   \---test
+|   |   |       \---optionator
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       |   \---dist
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---lib
+|   |   |       \---espree
+|   |   |           \---node_modules
+|   |   |               \---.bin
+|   |   |   \---node_modules
+|   |   |       \---esprima
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       |   \---dist
+|   |   |       \---estraverse
+|   |   |   \---node_modules
+|   |   |       \---estraverse
+|   |   |   \---node_modules
+|   |   |       \---estraverse
+|   |   |   \---node_modules
+|   |   |       \---esutils
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       |   |   \---util
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---lib
+|   |   |       |   \---build
+|   |   |       |       \---src
+|   |   |       \---strip-final-newline
+|   |   |   \---node_modules
+|   |   |       |   \---encoding
+|   |   |       |   \---main
+|   |   |       |       \---errors
+|   |   |       |   |   \---tables
+|   |   |       |   \---lib
+|   |   |       \---tmp
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---fast-deep-equal
+|   |   |           \---es6
+|   |   |   \---node_modules
+|   |   |       |   |   \---out
+|   |   |       |   |       \---types
+|   |   |       |   \---fs.walk
+|   |   |       |       \---out
+|   |   |       |           \---types
+|   |   |       |   \---out
+|   |   |       |       |   \---transformers
+|   |   |       |       \---utils
+|   |   |       \---micromatch
+|   |   |   \---node_modules
+|   |   |       |   |   \---out
+|   |   |       |   |       \---types
+|   |   |       |   \---fs.walk
+|   |   |       |       \---out
+|   |   |       |           \---types
+|   |   |       |   \---out
+|   |   |       |       |   \---transformers
+|   |   |       |       \---utils
+|   |   |       \---micromatch
+|   |   |   \---node_modules
+|   |   |       \---fast-json-stable-stringify
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---fast-levenshtein
+|   |   |   \---node_modules
+|   |   |       |   |   \---workflows
+|   |   |       |   \---test
+|   |   |       \---reusify
+|   |   |           |   \---workflows
+|   |   |           \---benchmarks
+|   |   |   \---node_modules
+|   |   |       \---figures
+|   |   |   \---node_modules
+|   |   |       \---flat-cache
+|   |   |           \---src
+|   |   |   \---node_modules
+|   |   |       \---to-regex-range
+|   |   |   \---node_modules
+|   |   |       \---path-exists
+|   |   |   \---node_modules
+|   |   |       |   \---src
+|   |   |       |   \---types
+|   |   |       \---keyv
+|   |   |           \---src
+|   |   |   \---node_modules
+|   |   |       \---flatted
+|   |   |           \---types
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---is-callable
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---lib
+|   |   |       |       \---util
+|   |   |       \---universalify
+|   |   |   \---node_modules
+|   |   |       \---fs.realpath
+|   |   |   \---node_modules
+|   |   |       \---function-bind
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       \---is-callable
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---functions-have-names
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       |   \---.github
+|   |   |       \---math-intrinsics
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---get-proto
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---get-stream
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---get-symbol-description
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---dist
+|   |   |       |   \---dist
+|   |   |       |   \---src
+|   |   |       \---get-uri
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       \---is-glob
+|   |   |   \---node_modules
+|   |   |       \---is-glob
+|   |   |   \---node_modules
+|   |   |       \---path-is-absolute
+|   |   |   \---node_modules
+|   |   |       \---globals
+|   |   |   \---node_modules
+|   |   |       \---globals
+|   |   |   \---node_modules
+|   |   |       |   \---.github
+|   |   |       |   \---test
+|   |   |       \---gopd
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---glob
+|   |   |       |   \---out
+|   |   |       |       |   \---transformers
+|   |   |       |       \---utils
+|   |   |       \---slash
+|   |   |   \---node_modules
+|   |   |       \---gopd
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---graceful-fs
+|   |   |   \---node_modules
+|   |   |       |   \---source
+|   |   |       \---tinygradient
+|   |   |   \---node_modules
+|   |   |       \---graphemer
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       |   |   |   \---handlebars
+|   |   |       |   |   |       \---internal
+|   |   |       |   |   \---cjs
+|   |   |       |   |       \---handlebars
+|   |   |       |   |           \---internal
+|   |   |       |   |   \---handlebars
+|   |   |       |   |       \---internal
+|   |   |       |   |   \---.bin
+|   |   |       |   \---types
+|   |   |       |   \---test
+|   |   |       |   \---lib
+|   |   |       |   \---tools
+|   |   |       \---wordwrap
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---has-bigints
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---has-flag
+|   |   |   \---node_modules
+|   |   |       \---has-flag
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---has-property-descriptors
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---has-proto
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---has-symbols
+|   |   |           \---test
+|   |   |               \---shams
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       \---has-tostringtag
+|   |   |           \---test
+|   |   |               \---shams
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---hasown
+|   |   |           \---.github
+|   |   |   \---node_modules
+|   |   |       |   \---vendor
+|   |   |       \---upper-case
+|   |   |   \---node_modules
+|   |   |       |   \---dist
+|   |   |       |   \---src
+|   |   |       \---http-proxy-agent
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       |   \---dist
+|   |   |       |   \---src
+|   |   |       \---https-proxy-agent
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       \---human-signals
+|   |   |           \---build
+|   |   |               \---src
+|   |   |   \---node_modules
+|   |   |       |   |   \---tables
+|   |   |       |   \---lib
+|   |   |       \---safer-buffer
+|   |   |   \---node_modules
+|   |   |       \---ieee754
+|   |   |   \---node_modules
+|   |   |       \---ignore
+|   |   |   \---node_modules
+|   |   |       \---ignore
+|   |   |   \---node_modules
+|   |   |       \---resolve-from
+|   |   |   \---node_modules
+|   |   |       \---imurmurhash
+|   |   |   \---node_modules
+|   |   |       \---indent-string
+|   |   |   \---node_modules
+|   |   |       \---wrappy
+|   |   |   \---node_modules
+|   |   |       \---inherits
+|   |   |   \---node_modules
+|   |   |       \---ini
+|   |   |   \---node_modules
+|   |   |       |   \---source
+|   |   |       |   \---.nyc_output
+|   |   |       |       \---processinfo
+|   |   |       |   \---main
+|   |   |       |       \---errors
+|   |   |       |   \---lib
+|   |   |       |       \---utils
+|   |   |       |   \---fp
+|   |   |       |   |   |   \---dom
+|   |   |       |   |   \---operator
+|   |   |       |   |   |   \---dom
+|   |   |       |   |   \---util
+|   |   |       |   |   \---update-6_0_0
+|   |   |       |   |   \---dom
+|   |   |       |   |   |   |   \---dom
+|   |   |       |   |   |   \---operator
+|   |   |       |   |   |   |   \---dom
+|   |   |       |   |   |   \---util
+|   |   |       |   |   |   \---dom
+|   |   |       |   |   \---webSocket
+|   |   |       |   |   |   |   \---dom
+|   |   |       |   |   |   \---util
+|   |   |       |   |   \---webSocket
+|   |   |       |   \---_esm5
+|   |   |       |       |   |   \---dom
+|   |   |       |       |   \---util
+|   |   |       |       \---webSocket
+|   |   |       \---through
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---source
+|   |   |       |   \---.nyc_output
+|   |   |       |       \---processinfo
+|   |   |       |   \---main
+|   |   |       |       \---errors
+|   |   |       |   \---lib
+|   |   |       |       \---utils
+|   |   |       |   \---fp
+|   |   |       |   |   |   |   |   \---dom
+|   |   |       |   |   |   |   \---util
+|   |   |       |   |   |   \---webSocket
+|   |   |       |   |   |   |   |   \---dom
+|   |   |       |   |   |   |   \---util
+|   |   |       |   |   |   \---webSocket
+|   |   |       |   |   |   |   |   \---dom
+|   |   |       |   |   |   |   \---util
+|   |   |       |   |   |   \---webSocket
+|   |   |       |   |   \---types
+|   |   |       |   |       |   |   \---dom
+|   |   |       |   |       |   \---util
+|   |   |       |   |       \---webSocket
+|   |   |       |   |   |   |   \---dom
+|   |   |       |   |   |   \---util
+|   |   |       |   |   \---webSocket
+|   |   |       |   \---webSocket
+|   |   |       |   \---test
+|   |   |       \---wrap-ansi
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   \---test
+|   |   |       \---side-channel
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   |   \---v6
+|   |   |       |   \---src
+|   |   |       |       \---v6
+|   |   |       |   \---test
+|   |   |       \---sprintf-js
+|   |   |           \---src
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---is-array-buffer
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---is-arrayish
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       |   \---test
+|   |   |       \---safe-regex-test
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---is-bigint
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       \---is-boolean-object
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---is-callable
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---.github
+|   |   |       \---is-core-module
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---is-typed-array
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       \---is-date-object
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---is-extglob
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---is-finalizationregistry
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---is-fullwidth-code-point
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       |   \---test
+|   |   |       \---safe-regex-test
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---is-glob
+|   |   |   \---node_modules
+|   |   |       \---is-interactive
+|   |   |   \---node_modules
+|   |   |       \---lower-case
+|   |   |   \---node_modules
+|   |   |       \---is-map
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---is-negative-zero
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       \---is-number-object
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---is-number
+|   |   |   \---node_modules
+|   |   |       \---is-path-cwd
+|   |   |   \---node_modules
+|   |   |       \---is-path-inside
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       |   \---.github
+|   |   |       \---is-regex
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---is-set
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---is-shared-array-buffer
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---is-stream
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       \---is-string
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       |   \---test
+|   |   |       \---safe-regex-test
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---which-typed-array
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---is-unicode-supported
+|   |   |   \---node_modules
+|   |   |       \---upper-case
+|   |   |   \---node_modules
+|   |   |       \---is-weakmap
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---is-weakref
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---is-weakset
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---isarray
+|   |   |   \---node_modules
+|   |   |       \---isbinaryfile
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---isexe
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       |   \---test
+|   |   |       \---set-function-name
+|   |   |           \---.github
+|   |   |   \---node_modules
+|   |   |       \---jiti
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---js-tokens
+|   |   |   \---node_modules
+|   |   |       |   \---lib
+|   |   |       \---js-yaml
+|   |   |           \---lib
+|   |   |               \---type
+|   |   |   \---node_modules
+|   |   |       \---jsbn
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---json-buffer
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---json-schema-traverse
+|   |   |           \---spec
+|   |   |               \---fixtures
+|   |   |   \---node_modules
+|   |   |       \---json-stable-stringify-without-jsonify
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---universalify
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   |   \---values
+|   |   |       |   |       \---expressions
+|   |   |       |   |   \---values
+|   |   |       |   |       \---expressions
+|   |   |       |   \---__tests__
+|   |   |       |       \---src
+|   |   |       |   \---test
+|   |   |       \---object.values
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---keyv
+|   |   |           \---src
+|   |   |   \---node_modules
+|   |   |       |   \---lib
+|   |   |       |   \---lib
+|   |   |       \---type-check
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---lightningcss-win32-x64-msvc
+|   |   |   \---node_modules
+|   |   |       |   \---lib
+|   |   |       |   \---node
+|   |   |       \---lightningcss-win32-x64-msvc
+|   |   |   \---node_modules
+|   |   |       \---p-locate
+|   |   |   \---node_modules
+|   |   |       \---lodash.get
+|   |   |   \---node_modules
+|   |   |       \---lodash.merge
+|   |   |   \---node_modules
+|   |   |       \---lodash
+|   |   |           \---fp
+|   |   |   \---node_modules
+|   |   |       |   \---types
+|   |   |       \---log-symbols
+|   |   |   \---node_modules
+|   |   |       |   \---source
+|   |   |       \---log-symbols
+|   |   |   \---node_modules
+|   |   |       \---loose-envify
+|   |   |   \---node_modules
+|   |   |       \---lower-case-first
+|   |   |   \---node_modules
+|   |   |       \---lower-case
+|   |   |   \---node_modules
+|   |   |       \---lru-cache
+|   |   |   \---node_modules
+|   |   |       |   \---dist
+|   |   |       |       |   \---shared
+|   |   |       |       |       \---src
+|   |   |       |       \---umd
+|   |   |       \---react
+|   |   |           \---cjs
+|   |   |   \---node_modules
+|   |   |       |   \---sourcemap-codec
+|   |   |       |       \---types
+|   |   |       \---magic-string
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       \---make-error
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       \---math-intrinsics
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---merge-stream
+|   |   |   \---node_modules
+|   |   |       \---merge2
+|   |   |   \---node_modules
+|   |   |       |   \---lib
+|   |   |       \---picomatch
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---mimic-fn
+|   |   |   \---node_modules
+|   |   |       \---minimatch
+|   |   |   \---node_modules
+|   |   |       |   \---.github
+|   |   |       \---minimatch
+|   |   |           \---dist
+|   |   |               \---esm
+|   |   |   \---node_modules
+|   |   |       \---minimist
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---minipass
+|   |   |           \---dist
+|   |   |               \---esm
+|   |   |   \---node_modules
+|   |   |       |   \---dist
+|   |   |       |       \---esm
+|   |   |       \---minizlib
+|   |   |           \---dist
+|   |   |               \---esm
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---mkdirp
+|   |   |           \---bin
+|   |   |   \---node_modules
+|   |   |       \---mkdirp
+|   |   |           \---dist
+|   |   |               |   \---src
+|   |   |               \---mjs
+|   |   |   \---node_modules
+|   |   |       \---ms
+|   |   |   \---node_modules
+|   |   |       \---mute-stream
+|   |   |   \---node_modules
+|   |   |       \---nanoid
+|   |   |           \---url-alphabet
+|   |   |   \---node_modules
+|   |   |       \---natural-compare
+|   |   |   \---node_modules
+|   |   |       \---neo-async
+|   |   |   \---node_modules
+|   |   |       \---netmask
+|   |   |           \---tests
+|   |   |   \---node_modules
+|   |   |       |   \---dist
+|   |   |       |   \---cjs
+|   |   |       \---react-dom
+|   |   |           \---cjs
+|   |   |   \---node_modules
+|   |   |       |   |   \---dist
+|   |   |       |   \---swc-win32-x64-msvc
+|   |   |       |   \---helpers
+|   |   |       |       \---_
+|   |   |       |           \---_write_only_error
+|   |   |       |   |   \---regions
+|   |   |       |   \---dist
+|   |   |       |       \---unpacker
+|   |   |       |   |   |   |   \---plugins
+|   |   |       |   |   |   |   \---__mocks__
+|   |   |       |   |   |   |   \---formatter
+|   |   |       |   |   |   |   \---object.assign
+|   |   |       |   |   |   |   \---pages
+|   |   |       |   |   |   |   |   \---blocks
+|   |   |       |   |   |   |   |       |   \---loaders
+|   |   |       |   |   |   |   |       \---images
+|   |   |       |   |   |   |   |   |   \---src
+|   |   |       |   |   |   |   |   |       \---runtime
+|   |   |       |   |   |   |   |   |   \---src
+|   |   |       |   |   |   |   |   |   \---runtime
+|   |   |       |   |   |   |   |   |   \---src
+|   |   |       |   |   |   |   |   \---resolve-url-loader
+|   |   |       |   |   |   |   |       \---lib
+|   |   |       |   |   |   |   \---plugins
+|   |   |       |   |   |   |       |   \---src
+|   |   |       |   |   |   |       \---wellknown-errors-plugin
+|   |   |       |   |   |   \---webpack-config-rules
+|   |   |       |   |   |   \---internal
+|   |   |       |   |   |   |   |   \---reducers
+|   |   |       |   |   |   |   \---styles
+|   |   |       |   |   |   |   \---hot-reloader
+|   |   |       |   |   |   |       \---pages
+|   |   |       |   |   |   \---tracing
+|   |   |       |   |   |   |   \---toolbox-optimizer
+|   |   |       |   |   |   |   \---runtime
+|   |   |       |   |   |   |       |   \---esm
+|   |   |       |   |   |   |       \---regenerator
+|   |   |       |   |   |   |   \---primitives
+|   |   |       |   |   |   |   \---accept
+|   |   |       |   |   |   |   \---interceptors
+|   |   |       |   |   |   |       \---ClientRequest
+|   |   |       |   |   |   |   \---triples
+|   |   |       |   |   |   |   |   |   \---local
+|   |   |       |   |   |   |   |   \---local
+|   |   |       |   |   |   |   \---react-refresh-utils
+|   |   |       |   |   |   |       \---dist
+|   |   |       |   |   |   |           \---internal
+|   |   |       |   |   |   |   \---api
+|   |   |       |   |   |   |   \---og
+|   |   |       |   |   |   |       \---satori
+|   |   |       |   |   |   |   \---hmr
+|   |   |       |   |   |   |   \---cjs
+|   |   |       |   |   |   |   \---cjs
+|   |   |       |   |   |   |   \---cjs
+|   |   |       |   |   |   |   \---cjs
+|   |   |       |   |   |   |   \---cjs
+|   |   |       |   |   |   |   \---cjs
+|   |   |       |   |   |   |   \---cjs
+|   |   |       |   |   |   |   \---cjs
+|   |   |       |   |   |   |   \---cjs
+|   |   |       |   |   |   |   \---cjs
+|   |   |       |   |   |   |   \---cjs
+|   |   |       |   |   |   |   \---cjs
+|   |   |       |   |   |   \---zod-validation-error
+|   |   |       |   |   |   |   |   \---plugins
+|   |   |       |   |   |   |   |   \---formatter
+|   |   |       |   |   |   |   |   \---object.assign
+|   |   |       |   |   |   |   |   \---pages
+|   |   |       |   |   |   |   |   |   \---blocks
+|   |   |       |   |   |   |   |   |       |   \---loaders
+|   |   |       |   |   |   |   |   |       \---images
+|   |   |       |   |   |   |   |   |   |   \---src
+|   |   |       |   |   |   |   |   |   |       \---runtime
+|   |   |       |   |   |   |   |   |   |   \---src
+|   |   |       |   |   |   |   |   |   |   \---runtime
+|   |   |       |   |   |   |   |   |   |   \---src
+|   |   |       |   |   |   |   |   |   \---resolve-url-loader
+|   |   |       |   |   |   |   |   |       \---lib
+|   |   |       |   |   |   |   |   \---plugins
+|   |   |       |   |   |   |   |       |   \---src
+|   |   |       |   |   |   |   |       \---wellknown-errors-plugin
+|   |   |       |   |   |   |   \---webpack-config-rules
+|   |   |       |   |   |   |   |   |   \---reducers
+|   |   |       |   |   |   |   |   \---styles
+|   |   |       |   |   |   |   |   \---hot-reloader
+|   |   |       |   |   |   |   |       \---pages
+|   |   |       |   |   |   |   \---tracing
+|   |   |       |   |   |   |   \---routes
+|   |   |       |   |   |   |   |   \---types
+|   |   |       |   |   |   |   \---typescript
+|   |   |       |   |   |   |   |   \---font
+|   |   |       |   |   |   |   \---userspace
+|   |   |       |   |   |   |       |   \---errors
+|   |   |       |   |   |   |       \---pages
+|   |   |       |   |   |   |   |   \---node
+|   |   |       |   |   |   |   |   \---rsc
+|   |   |       |   |   |   |   |   \---browser-logs
+|   |   |       |   |   |   |   |   \---trace
+|   |   |       |   |   |   |   |   |   \---pages
+|   |   |       |   |   |   |   |   \---request
+|   |   |       |   |   |   |   |   |   \---helpers
+|   |   |       |   |   |   |   |   |       \---file-reader
+|   |   |       |   |   |   |   |   \---helpers
+|   |   |       |   |   |   |   |       \---manifest-loaders
+|   |   |       |   |   |   |   |   |   \---vendored
+|   |   |       |   |   |   |   |   |       \---ssr
+|   |   |       |   |   |   |   |   |   \---helpers
+|   |   |       |   |   |   |   |   |   \---vendored
+|   |   |       |   |   |   |   |   |       \---contexts
+|   |   |       |   |   |   |   |   \---pages-api
+|   |   |       |   |   |   |   |   \---rules
+|   |   |       |   |   |   |   \---web
+|   |   |       |   |   |   |       \---spec-extension
+|   |   |       |   |   |   |           \---adapters
+|   |   |       |   |   |   \---shared
+|   |   |       |   |   |       \---lib
+|   |   |       |   |   |           |   \---utils
+|   |   |       |   |   |           \---utils
+|   |   |       |   |   |   |   \---server
+|   |   |       |   |   |   \---testmode
+|   |   |       |   |   |       \---proxy
+|   |   |       |   |   |   \---routes
+|   |   |       |   |   |   |   \---types
+|   |   |       |   |   |   \---typescript
+|   |   |       |   |   |   |   |   |   \---hooks
+|   |   |       |   |   |   |   |   |   |   \---issues-tab
+|   |   |       |   |   |   |   |   |   \---resize
+|   |   |       |   |   |   |   |   |   |   \---dev-tools-info
+|   |   |       |   |   |   |   |   |   |   \---error-feedback
+|   |   |       |   |   |   |   |   |   \---overlay
+|   |   |       |   |   |   |   |   \---version-staleness-info
+|   |   |       |   |   |   |   |   \---runtime-error
+|   |   |       |   |   |   |   |   \---thumbs
+|   |   |       |   |   |   |   \---utils
+|   |   |       |   |   |   |   \---font
+|   |   |       |   |   |   \---userspace
+|   |   |       |   |   |       |   \---errors
+|   |   |       |   |   |       \---pages
+|   |   |       |   |   |   |   \---node
+|   |   |       |   |   |   |   \---rsc
+|   |   |       |   |   |   |   \---browser-logs
+|   |   |       |   |   |   |   \---trace
+|   |   |       |   |   |   |   |   \---pages
+|   |   |       |   |   |   |   \---request
+|   |   |       |   |   |   |   |   \---helpers
+|   |   |       |   |   |   |   |       \---file-reader
+|   |   |       |   |   |   |   \---helpers
+|   |   |       |   |   |   |       \---manifest-loaders
+|   |   |       |   |   |   |   |   \---vendored
+|   |   |       |   |   |   |   |       \---ssr
+|   |   |       |   |   |   |   |   \---helpers
+|   |   |       |   |   |   |   |   \---vendored
+|   |   |       |   |   |   |   |       \---contexts
+|   |   |       |   |   |   |   \---pages-api
+|   |   |       |   |   |   |   \---rules
+|   |   |       |   |   |   \---web
+|   |   |       |   |   |       \---spec-extension
+|   |   |       |   |   |           \---adapters
+|   |   |       |   |   |   \---lib
+|   |   |       |   |   |       |   \---utils
+|   |   |       |   |   |       \---utils
+|   |   |       |   |   |   \---types
+|   |   |       |   |   |   \---events
+|   |   |       |   |   \---trace
+|   |   |       |   |       \---report
+|   |   |       |   |   \---testmode
+|   |   |       |   |       \---playwright
+|   |   |       |   |   \---local
+|   |   |       |   |   \---compat
+|   |   |       |   \---types
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---cjs
+|   |   |       |   \---cjs
+|   |   |       |   |   \---.bin
+|   |   |       |   \---src
+|   |   |       \---styled-jsx
+|   |   |           |   \---webpack
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---no-case
+|   |   |           \---vendor
+|   |   |   \---node_modules
+|   |   |       |   \---runtime-corejs3
+|   |   |       |       |   \---symbol
+|   |   |       |       |   \---symbol
+|   |   |       |       |   \---esm
+|   |   |       |       \---regenerator
+|   |   |       |   \---inquirer
+|   |   |       |       \---lib
+|   |   |       |           \---utils
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   |   |   \---handlebars
+|   |   |       |   |   |       \---internal
+|   |   |       |   |   \---cjs
+|   |   |       |   |       \---handlebars
+|   |   |       |   |           \---internal
+|   |   |       |   |   \---handlebars
+|   |   |       |   |       \---internal
+|   |   |       |   |   \---.bin
+|   |   |       |   \---types
+|   |   |       |   \---lib
+|   |   |       |       \---utils
+|   |   |       |   \---lib
+|   |   |       |   \---bin
+|   |   |       |   |   \---actions
+|   |   |       |   |   \---.bin
+|   |   |       |   \---types
+|   |   |       \---resolve
+|   |   |           \---test
+|   |   |               |   \---abc
+|   |   |               |   |   \---aaa
+|   |   |               |   |   \---aaa
+|   |   |               |   \---zmodules
+|   |   |               |       \---bbb
+|   |   |               |   |   \---ccc
+|   |   |               |   \---y
+|   |   |               |       \---ccc
+|   |   |               |   \---deep_ref
+|   |   |               |   \---bbb
+|   |   |               |   |   \---packages
+|   |   |               |   |       \---package-b
+|   |   |               |   |   \---mylib
+|   |   |               |   |   \---lib
+|   |   |               |   |   \---foo
+|   |   |               |   |   \---foo
+|   |   |               |   |   \---_
+|   |   |               |   |       \---symlink_target
+|   |   |               |   \---without_basedir
+|   |   |               \---shadowed_core
+|   |   |                   \---node_modules
+|   |   |                       \---util
+|   |   |   |   \---quick-lru
+|   |   |   |   \---remapping
+|   |   |   |       \---dist
+|   |   |   |           \---types
+|   |   |   |   \---runtime-corejs3
+|   |   |   |       |   \---symbol
+|   |   |   |       |   \---symbol
+|   |   |   |       |   \---esm
+|   |   |   |       \---regenerator
+|   |   |   |   \---source-map-support
+|   |   |   |   |   \---dist
+|   |   |   |   |       |   \---std__path
+|   |   |   |   |       \---esm
+|   |   |   |   |           \---std__path
+|   |   |   |   |   \---dist
+|   |   |   |   |       \---esm
+|   |   |   |   |   \---dist
+|   |   |   |   |       \---esm
+|   |   |   |   |   |   \---types
+|   |   |   |   |   \---node_modules
+|   |   |   |   |       \---.bin
+|   |   |   |   |   |   \---configs
+|   |   |   |   |   \---types
+|   |   |   |   |   \---dist
+|   |   |   |   |       \---esm
+|   |   |   |   \---plugin-kit
+|   |   |   |       \---dist
+|   |   |   |           \---esm
+|   |   |   |   |   \---node_modules
+|   |   |   |   |       \---.bin
+|   |   |   |   \---regexpp
+|   |   |   |   |   \---src
+|   |   |   |   \---node
+|   |   |   |       \---src
+|   |   |   |   |   \---src
+|   |   |   |   \---retry
+|   |   |   |       \---dist
+|   |   |   |   \---sharp-win32-x64
+|   |   |   |       \---lib
+|   |   |   |   \---fs-minipass
+|   |   |   |       \---dist
+|   |   |   |           \---esm
+|   |   |   |   |   \---types
+|   |   |   |   |   \---dist
+|   |   |   |   |       \---types
+|   |   |   |   |   \---types
+|   |   |   |   \---trace-mapping
+|   |   |   |       \---types
+|   |   |   |   |   \---dist
+|   |   |   |   |   \---dist
+|   |   |   |   |       \---utils
+|   |   |   |   \---swc-win32-x64-msvc
+|   |   |   |   |   \---out
+|   |   |   |   |       \---utils
+|   |   |   |   |   \---out
+|   |   |   |   |       \---types
+|   |   |   |   \---fs.walk
+|   |   |   |       \---out
+|   |   |   |           \---types
+|   |   |   |   |   \---dist
+|   |   |   |   \---react-slot
+|   |   |   |       \---dist
+|   |   |   |   \---helpers
+|   |   |   |       \---_
+|   |   |   |           \---_write_only_error
+|   |   |   |   |   \---node_modules
+|   |   |   |   |       \---.bin
+|   |   |   |   |   \---scripts
+|   |   |   |   \---postcss
+|   |   |   |       \---dist
+|   |   |   |   \---quickjs-emscripten
+|   |   |   |       \---dist
+|   |   |   |           \---generated
+|   |   |   |   \---node16
+|   |   |   |   |   |   \---templates
+|   |   |   |   |   |       |   \---templates
+|   |   |   |   |   |       \---simple-ts
+|   |   |   |   |   |           \---templates
+|   |   |   |   |   \---node_modules
+|   |   |   |   |       \---.bin
+|   |   |   |   \---workspaces
+|   |   |   |       \---node_modules
+|   |   |   |           \---.bin
+|   |   |   |   |   \---lib
+|   |   |   |   |       \---utils
+|   |   |   |   |   \---ts5.6
+|   |   |   |   |   \---ts5.0
+|   |   |   |   |       \---v18
+|   |   |   |   |           \---ts5.0
+|   |   |   |   |   \---test-utils
+|   |   |   |   \---tinycolor2
+|   |   |   |   |   |   |   \---flat
+|   |   |   |   |   |   |   \---prefer-optional-chain-utils
+|   |   |   |   |   |   \---util
+|   |   |   |   |   \---node_modules
+|   |   |   |   |       \---.bin
+|   |   |   |   |   \---node_modules
+|   |   |   |   |       \---.bin
+|   |   |   |   |   \---node_modules
+|   |   |   |   |       \---.bin
+|   |   |   |   |   \---dist
+|   |   |   |   |       \---variable
+|   |   |   |   |   \---node_modules
+|   |   |   |   |       \---.bin
+|   |   |   |   |   |   \---typeOrValueSpecifiers
+|   |   |   |   |   \---node_modules
+|   |   |   |   |       \---.bin
+|   |   |   |   |   \---dist
+|   |   |   |   |       \---generated
+|   |   |   |   |   |   \---ts-estree
+|   |   |   |   |   \---node_modules
+|   |   |   |   |       \---.bin
+|   |   |   |   |   |   |   \---eslint-utils
+|   |   |   |   |   |   |   \---eslint
+|   |   |   |   |   |   \---ts-utils
+|   |   |   |   |   \---node_modules
+|   |   |   |   |       \---.bin
+|   |   |   |   \---visitor-keys
+|   |   |   |       \---dist
+|   |   |   |   \---ui
+|   |   |   |       |   |   \---react-slot
+|   |   |   |       |   |       \---dist
+|   |   |   |       |   |   \---postcss
+|   |   |   |       |   |       \---dist
+|   |   |   |       |   |   \---gen
+|   |   |   |       |   |       |   \---templates
+|   |   |   |       |   |       |       |   \---templates
+|   |   |   |       |   |       |       \---simple-ts
+|   |   |   |       |   |       |           \---templates
+|   |   |   |       |   |       \---node_modules
+|   |   |   |       |   |           \---.bin
+|   |   |   |       |   |   |   \---ts5.6
+|   |   |   |       |   |   |   \---ts5.0
+|   |   |   |       |   |   |       \---v18
+|   |   |   |       |   |   |           \---ts5.0
+|   |   |   |       |   |   \---react-dom
+|   |   |   |       |   |       \---test-utils
+|   |   |   |       |   |   |   \---node_modules
+|   |   |   |       |   |   |       |   \---js
+|   |   |   |       |   |   |       |       |   \---configs
+|   |   |   |       |   |   |       |       \---types
+|   |   |   |       |   |   |       |   \---eslint-plugin-next
+|   |   |   |       |   |   |       |       \---dist
+|   |   |   |       |   |   |       |           \---utils
+|   |   |   |       |   |   |       |   |   |   |   \---flat
+|   |   |   |       |   |   |       |   |   |   |   \---prefer-optional-chain-utils
+|   |   |   |       |   |   |       |   |   |   \---util
+|   |   |   |       |   |   |       |   |   \---node_modules
+|   |   |   |       |   |   |       |   |       \---.bin
+|   |   |   |       |   |   |       |   \---parser
+|   |   |   |       |   |   |       |       \---node_modules
+|   |   |   |       |   |   |       |           \---.bin
+|   |   |   |       |   |   |       |   |   |   \---formatters
+|   |   |   |       |   |   |       |   |   |   \---js
+|   |   |   |       |   |   |       |   |   |       \---source-code
+|   |   |   |       |   |   |       |   |   |           \---token-store
+|   |   |   |       |   |   |       |   |   |   \---code-path-analysis
+|   |   |   |       |   |   |       |   |   |   \---utils
+|   |   |   |       |   |   |       |   |   |       \---unicode
+|   |   |   |       |   |   |       |   |   \---types
+|   |   |   |       |   |   |       |   \---node_modules
+|   |   |   |       |   |   |       |       \---.bin
+|   |   |   |       |   |   |       |   \---node_modules
+|   |   |   |       |   |   |       |       \---.bin
+|   |   |   |       |   |   |       |   |   \---workflows
+|   |   |   |       |   |   |       |   \---tests
+|   |   |   |       |   |   |       |   |   \---util
+|   |   |   |       |   |   |       |   \---node_modules
+|   |   |   |       |   |   |       |       \---.bin
+|   |   |   |       |   |   |       |   \---node_modules
+|   |   |   |       |   |   |       |       \---.bin
+|   |   |   |       |   |   |       |   \---node_modules
+|   |   |   |       |   |   |       |       \---.bin
+|   |   |   |       |   |   |       |   \---lib
+|   |   |   |       |   |   |       |       \---zh-tw
+|   |   |   |       |   |   |       \---typescript-eslint
+|   |   |   |       |   |   |           \---node_modules
+|   |   |   |       |   |   |               \---.bin
+|   |   |   |       |   |   \---typescript-config
+|   |   |   |       |   |   \---dist
+|   |   |   |       |   |   \---dist
+|   |   |   |       |   |   |   |   \---formatters
+|   |   |   |       |   |   |   |   \---js
+|   |   |   |       |   |   |   |       \---source-code
+|   |   |   |       |   |   |   |           \---token-store
+|   |   |   |       |   |   |   |   \---code-path-analysis
+|   |   |   |       |   |   |   |   \---utils
+|   |   |   |       |   |   |   |       \---unicode
+|   |   |   |       |   |   |   \---types
+|   |   |   |       |   |   \---node_modules
+|   |   |   |       |   |       \---.bin
+|   |   |   |       |   |   \---dist
+|   |   |   |       |   |       |   \---shared
+|   |   |   |       |   |       |       \---src
+|   |   |   |       |   |       \---umd
+|   |   |   |       |   |   \---dist
+|   |   |   |       |   |   \---cjs
+|   |   |   |       |   |   \---cjs
+|   |   |   |       |   |   |   \---es5
+|   |   |   |       |   |   \---src
+|   |   |   |       |   |       \---lib
+|   |   |   |       |   |   \---dist
+|   |   |   |       |   |   \---dist
+|   |   |   |       |   |   \---lib
+|   |   |   |       |   |       \---zh-tw
+|   |   |   |       |   \---zod
+|   |   |   |       |       |   |   \---tests
+|   |   |   |       |       |   |   |   \---tests
+|   |   |   |       |       |   |   |   \---tests
+|   |   |   |       |       |   |   |       \---locales
+|   |   |   |       |       |   |   \---mini
+|   |   |   |       |       |   |       \---tests
+|   |   |   |       |       |   \---v4-mini
+|   |   |   |       |       |   \---locales
+|   |   |   |       |       |   \---mini
+|   |   |   |       |       \---v4-mini
+|   |   |   |       \---src
+|   |   |   |           \---styles
+|   |   |   |   \---dist
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---dist
+|   |   |   |   |   \---refs
+|   |   |   |   \---scripts
+|   |   |   |   \---lib
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   |   \---workflows
+|   |   |   |   \---lib
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---.github
+|   |   |   |   \---dist
+|   |   |   |   \---test
+|   |   |   |   \---lib
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   |   \---regions
+|   |   |   |   \---dist
+|   |   |   |       \---unpacker
+|   |   |   |   \---source
+|   |   |   |   \---encoding
+|   |   |   |   \---dist
+|   |   |   |       \---esm
+|   |   |   |   \---dist
+|   |   |   |   \---.nyc_output
+|   |   |   |       \---processinfo
+|   |   |   |   \---dist
+|   |   |   |   \---typings
+|   |   |   |   \---test
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   \---weak-set
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   \---weak-set
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   \---weak-set
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   \---weak-set
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   |   \---virtual
+|   |   |   |   |   \---weak-set
+|   |   |   |   \---web
+|   |   |   |   |   \---util
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---dist
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---src
+|   |   |   |   \---lib
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---.github
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---lib
+|   |   |   |   \---lib
+|   |   |   |       \---util
+|   |   |   |   \---lib
+|   |   |   |   \---lib
+|   |   |   |   \---test
+|   |   |   |   \---es2015
+|   |   |   |   \---lib
+|   |   |   |       \---util
+|   |   |   |   |   \---tables
+|   |   |   |   |   \---tables
+|   |   |   |   |   \---tables
+|   |   |   |   |   \---tables
+|   |   |   |   |   \---tables
+|   |   |   |   |   \---tables
+|   |   |   |   |   \---tables
+|   |   |   |   |   \---tables
+|   |   |   |   |   \---tables
+|   |   |   |   |   \---tables
+|   |   |   |   |   \---tables
+|   |   |   |   |   \---records
+|   |   |   |   \---operations
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   |   \---helpers
+|   |   |   |   \---WrapForValidIteratorPrototype
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   |   |   \---formatters
+|   |   |   |   |   |   \---js
+|   |   |   |   |   |       \---source-code
+|   |   |   |   |   |           \---token-store
+|   |   |   |   |   |   \---code-path-analysis
+|   |   |   |   |   |   \---utils
+|   |   |   |   |   |       \---unicode
+|   |   |   |   |   \---types
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   |   \---workflows
+|   |   |   |   \---tests
+|   |   |   |   |   \---util
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---lib
+|   |   |   |   \---lib
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---dist
+|   |   |   |   \---dist
+|   |   |   |   \---lib
+|   |   |   |   \---lib
+|   |   |   |   \---main
+|   |   |   |       \---errors
+|   |   |   |   \---es6
+|   |   |   |   \---out
+|   |   |   |       |   \---transformers
+|   |   |   |       \---utils
+|   |   |   |   \---test
+|   |   |   |   |   \---workflows
+|   |   |   |   \---test
+|   |   |   |   \---src
+|   |   |   |   \---types
+|   |   |   |   \---test
+|   |   |   |   \---lib
+|   |   |   |       \---util
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---dist
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---lib
+|   |   |   |   |   |   \---handlebars
+|   |   |   |   |   |       \---internal
+|   |   |   |   |   \---cjs
+|   |   |   |   |       \---handlebars
+|   |   |   |   |           \---internal
+|   |   |   |   |   \---handlebars
+|   |   |   |   |       \---internal
+|   |   |   |   |   \---.bin
+|   |   |   |   \---types
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |       \---shams
+|   |   |   |   \---test
+|   |   |   |       \---shams
+|   |   |   |   \---.github
+|   |   |   |   \---dist
+|   |   |   |   \---dist
+|   |   |   |   \---build
+|   |   |   |       \---src
+|   |   |   |   |   \---tables
+|   |   |   |   \---lib
+|   |   |   |   \---lib
+|   |   |   |       \---utils
+|   |   |   |   \---test
+|   |   |   |   |   \---v6
+|   |   |   |   \---src
+|   |   |   |       \---v6
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---lib
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---lib
+|   |   |   |   \---lib
+|   |   |   |       \---type
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---spec
+|   |   |   |       \---fixtures
+|   |   |   |   \---test
+|   |   |   |   |   \---values
+|   |   |   |   |       \---expressions
+|   |   |   |   |   \---values
+|   |   |   |   |       \---expressions
+|   |   |   |   \---__tests__
+|   |   |   |       \---src
+|   |   |   |   \---src
+|   |   |   |   \---lib
+|   |   |   |   \---node
+|   |   |   |   \---fp
+|   |   |   |   \---dist
+|   |   |   |       |   \---shared
+|   |   |   |       |       \---src
+|   |   |   |       \---umd
+|   |   |   |   \---dist
+|   |   |   |   \---dist
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---dist
+|   |   |   |       \---esm
+|   |   |   |   \---dist
+|   |   |   |       \---esm
+|   |   |   |   \---dist
+|   |   |   |       |   \---src
+|   |   |   |       \---mjs
+|   |   |   |   \---url-alphabet
+|   |   |   |   \---tests
+|   |   |   |   |   |   |   \---plugins
+|   |   |   |   |   |   |   \---__mocks__
+|   |   |   |   |   |   |   \---formatter
+|   |   |   |   |   |   |   \---object.assign
+|   |   |   |   |   |   |   \---pages
+|   |   |   |   |   |   |   |   \---blocks
+|   |   |   |   |   |   |   |       |   \---loaders
+|   |   |   |   |   |   |   |       \---images
+|   |   |   |   |   |   |   |   |   \---src
+|   |   |   |   |   |   |   |   |       \---runtime
+|   |   |   |   |   |   |   |   |   \---src
+|   |   |   |   |   |   |   |   |   \---runtime
+|   |   |   |   |   |   |   |   |   \---src
+|   |   |   |   |   |   |   |   \---resolve-url-loader
+|   |   |   |   |   |   |   |       \---lib
+|   |   |   |   |   |   |   \---plugins
+|   |   |   |   |   |   |       |   \---src
+|   |   |   |   |   |   |       \---wellknown-errors-plugin
+|   |   |   |   |   |   \---webpack-config-rules
+|   |   |   |   |   |   \---internal
+|   |   |   |   |   |   |   |   \---reducers
+|   |   |   |   |   |   |   \---styles
+|   |   |   |   |   |   |   \---hot-reloader
+|   |   |   |   |   |   |       \---pages
+|   |   |   |   |   |   \---tracing
+|   |   |   |   |   |   |   \---toolbox-optimizer
+|   |   |   |   |   |   |   \---runtime
+|   |   |   |   |   |   |       |   \---esm
+|   |   |   |   |   |   |       \---regenerator
+|   |   |   |   |   |   |   \---primitives
+|   |   |   |   |   |   |   \---accept
+|   |   |   |   |   |   |   \---interceptors
+|   |   |   |   |   |   |       \---ClientRequest
+|   |   |   |   |   |   |   \---triples
+|   |   |   |   |   |   |   |   |   \---local
+|   |   |   |   |   |   |   |   \---local
+|   |   |   |   |   |   |   \---react-refresh-utils
+|   |   |   |   |   |   |       \---dist
+|   |   |   |   |   |   |           \---internal
+|   |   |   |   |   |   |   \---api
+|   |   |   |   |   |   |   \---og
+|   |   |   |   |   |   |       \---satori
+|   |   |   |   |   |   |   \---hmr
+|   |   |   |   |   |   |   \---cjs
+|   |   |   |   |   |   |   \---cjs
+|   |   |   |   |   |   |   \---cjs
+|   |   |   |   |   |   |   \---cjs
+|   |   |   |   |   |   |   \---cjs
+|   |   |   |   |   |   |   \---cjs
+|   |   |   |   |   |   |   \---cjs
+|   |   |   |   |   |   |   \---cjs
+|   |   |   |   |   |   |   \---cjs
+|   |   |   |   |   |   |   \---cjs
+|   |   |   |   |   |   |   \---cjs
+|   |   |   |   |   |   |   \---cjs
+|   |   |   |   |   |   \---zod-validation-error
+|   |   |   |   |   |   |   |   \---plugins
+|   |   |   |   |   |   |   |   \---formatter
+|   |   |   |   |   |   |   |   \---object.assign
+|   |   |   |   |   |   |   |   \---pages
+|   |   |   |   |   |   |   |   |   \---blocks
+|   |   |   |   |   |   |   |   |       |   \---loaders
+|   |   |   |   |   |   |   |   |       \---images
+|   |   |   |   |   |   |   |   |   |   \---src
+|   |   |   |   |   |   |   |   |   |       \---runtime
+|   |   |   |   |   |   |   |   |   |   \---src
+|   |   |   |   |   |   |   |   |   |   \---runtime
+|   |   |   |   |   |   |   |   |   |   \---src
+|   |   |   |   |   |   |   |   |   \---resolve-url-loader
+|   |   |   |   |   |   |   |   |       \---lib
+|   |   |   |   |   |   |   |   \---plugins
+|   |   |   |   |   |   |   |       |   \---src
+|   |   |   |   |   |   |   |       \---wellknown-errors-plugin
+|   |   |   |   |   |   |   \---webpack-config-rules
+|   |   |   |   |   |   |   |   |   \---reducers
+|   |   |   |   |   |   |   |   \---styles
+|   |   |   |   |   |   |   |   \---hot-reloader
+|   |   |   |   |   |   |   |       \---pages
+|   |   |   |   |   |   |   \---tracing
+|   |   |   |   |   |   |   \---routes
+|   |   |   |   |   |   |   |   \---types
+|   |   |   |   |   |   |   \---typescript
+|   |   |   |   |   |   |   |   \---font
+|   |   |   |   |   |   |   \---userspace
+|   |   |   |   |   |   |       |   \---errors
+|   |   |   |   |   |   |       \---pages
+|   |   |   |   |   |   |   |   \---node
+|   |   |   |   |   |   |   |   \---rsc
+|   |   |   |   |   |   |   |   \---browser-logs
+|   |   |   |   |   |   |   |   \---trace
+|   |   |   |   |   |   |   |   |   \---pages
+|   |   |   |   |   |   |   |   \---request
+|   |   |   |   |   |   |   |   |   \---helpers
+|   |   |   |   |   |   |   |   |       \---file-reader
+|   |   |   |   |   |   |   |   \---helpers
+|   |   |   |   |   |   |   |       \---manifest-loaders
+|   |   |   |   |   |   |   |   |   \---vendored
+|   |   |   |   |   |   |   |   |       \---ssr
+|   |   |   |   |   |   |   |   |   \---helpers
+|   |   |   |   |   |   |   |   |   \---vendored
+|   |   |   |   |   |   |   |   |       \---contexts
+|   |   |   |   |   |   |   |   \---pages-api
+|   |   |   |   |   |   |   |   \---rules
+|   |   |   |   |   |   |   \---web
+|   |   |   |   |   |   |       \---spec-extension
+|   |   |   |   |   |   |           \---adapters
+|   |   |   |   |   |   \---shared
+|   |   |   |   |   |       \---lib
+|   |   |   |   |   |           |   \---utils
+|   |   |   |   |   |           \---utils
+|   |   |   |   |   |   |   \---server
+|   |   |   |   |   |   \---testmode
+|   |   |   |   |   |       \---proxy
+|   |   |   |   |   |   \---routes
+|   |   |   |   |   |   |   \---types
+|   |   |   |   |   |   \---typescript
+|   |   |   |   |   |   |   |   |   \---hooks
+|   |   |   |   |   |   |   |   |   |   \---issues-tab
+|   |   |   |   |   |   |   |   |   \---resize
+|   |   |   |   |   |   |   |   |   |   \---dev-tools-info
+|   |   |   |   |   |   |   |   |   |   \---error-feedback
+|   |   |   |   |   |   |   |   |   \---overlay
+|   |   |   |   |   |   |   |   \---version-staleness-info
+|   |   |   |   |   |   |   |   \---runtime-error
+|   |   |   |   |   |   |   |   \---thumbs
+|   |   |   |   |   |   |   \---utils
+|   |   |   |   |   |   |   \---font
+|   |   |   |   |   |   \---userspace
+|   |   |   |   |   |       |   \---errors
+|   |   |   |   |   |       \---pages
+|   |   |   |   |   |   |   \---node
+|   |   |   |   |   |   |   \---rsc
+|   |   |   |   |   |   |   \---browser-logs
+|   |   |   |   |   |   |   \---trace
+|   |   |   |   |   |   |   |   \---pages
+|   |   |   |   |   |   |   \---request
+|   |   |   |   |   |   |   |   \---helpers
+|   |   |   |   |   |   |   |       \---file-reader
+|   |   |   |   |   |   |   \---helpers
+|   |   |   |   |   |   |       \---manifest-loaders
+|   |   |   |   |   |   |   |   \---vendored
+|   |   |   |   |   |   |   |       \---ssr
+|   |   |   |   |   |   |   |   \---helpers
+|   |   |   |   |   |   |   |   \---vendored
+|   |   |   |   |   |   |   |       \---contexts
+|   |   |   |   |   |   |   \---pages-api
+|   |   |   |   |   |   |   \---rules
+|   |   |   |   |   |   \---web
+|   |   |   |   |   |       \---spec-extension
+|   |   |   |   |   |           \---adapters
+|   |   |   |   |   |   \---lib
+|   |   |   |   |   |       |   \---utils
+|   |   |   |   |   |       \---utils
+|   |   |   |   |   |   \---types
+|   |   |   |   |   |   \---events
+|   |   |   |   |   \---trace
+|   |   |   |   |       \---report
+|   |   |   |   |   \---testmode
+|   |   |   |   |       \---playwright
+|   |   |   |   |   \---local
+|   |   |   |   |   \---compat
+|   |   |   |   \---types
+|   |   |   |   \---dist
+|   |   |   |   \---vendor
+|   |   |   |   |   \---actions
+|   |   |   |   |   \---.bin
+|   |   |   |   \---types
+|   |   |   |   \---test
+|   |   |   |       \---browser
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---lib
+|   |   |   |   \---test
+|   |   |   |   \---dist
+|   |   |   |   \---dist
+|   |   |   |   \---lib
+|   |   |   |   \---test
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---lib
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---dist
+|   |   |   |   \---test
+|   |   |   |   \---cjs
+|   |   |   |   \---cjs
+|   |   |   |   \---umd
+|   |   |   |   \---lib
+|   |   |   |       \---internal
+|   |   |   |           \---streams
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   |   \---.bin
+|   |   |   |   \---test
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---test
+|   |   |   |       |   \---abc
+|   |   |   |       |   |   \---aaa
+|   |   |   |       |   |   \---aaa
+|   |   |   |       |   \---zmodules
+|   |   |   |       |       \---bbb
+|   |   |   |       |   |   \---ccc
+|   |   |   |       |   \---y
+|   |   |   |       |       \---ccc
+|   |   |   |       |   \---deep_ref
+|   |   |   |       |   \---bbb
+|   |   |   |       |   |   \---packages
+|   |   |   |       |   |       \---package-b
+|   |   |   |       |   |   \---mylib
+|   |   |   |       |   |   \---lib
+|   |   |   |       |   |   \---foo
+|   |   |   |       |   |   \---foo
+|   |   |   |       |   |   \---_
+|   |   |   |       |   |       \---symlink_target
+|   |   |   |       |   \---without_basedir
+|   |   |   |       \---shadowed_core
+|   |   |   |           \---node_modules
+|   |   |   |               \---util
+|   |   |   |   |   \---workflows
+|   |   |   |   \---benchmarks
+|   |   |   |   |   |   |   |   \---dom
+|   |   |   |   |   |   |   \---util
+|   |   |   |   |   |   \---webSocket
+|   |   |   |   |   |   |   |   \---dom
+|   |   |   |   |   |   |   \---util
+|   |   |   |   |   |   \---webSocket
+|   |   |   |   |   |   |   |   \---dom
+|   |   |   |   |   |   |   \---util
+|   |   |   |   |   |   \---webSocket
+|   |   |   |   |   \---types
+|   |   |   |   |       |   |   \---dom
+|   |   |   |   |       |   \---util
+|   |   |   |   |       \---webSocket
+|   |   |   |   |   |   |   \---dom
+|   |   |   |   |   |   \---util
+|   |   |   |   |   \---webSocket
+|   |   |   |   \---webSocket
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---cjs
+|   |   |   |   \---bin
+|   |   |   |   \---.github
+|   |   |   |   \---.github
+|   |   |   |   \---test
+|   |   |   |   |   \---.bin
+|   |   |   |   \---src
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---typings
+|   |   |   |   |   \---common
+|   |   |   |   |   \---examples
+|   |   |   |   |       \---typescript
+|   |   |   |   \---typings
+|   |   |   |       \---common
+|   |   |   |   \---dist
+|   |   |   |   \---lib
+|   |   |   |   \---lib
+|   |   |   |   \---src
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---tests
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---lib
+|   |   |   |   |   \---webpack
+|   |   |   |   \---lib
+|   |   |   |   \---test
+|   |   |   |   |   \---es5
+|   |   |   |   \---src
+|   |   |   |       \---lib
+|   |   |   |   \---dist
+|   |   |   |   \---lib
+|   |   |   |   |   \---esm
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---test
+|   |   |   |   \---esm
+|   |   |   |   \---lib
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   |   \---transpilers
+|   |   |   |   |   \---.bin
+|   |   |   |   \---transpilers
+|   |   |   |   \---modules
+|   |   |   |   \---bin
+|   |   |   |   \---dist
+|   |   |   |   \---lib
+|   |   |   |   \---ts41
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---node_modules
+|   |   |   |       \---.bin
+|   |   |   |   \---tools
+|   |   |   |   \---test
+|   |   |   |   \---dist
+|   |   |   |       \---esnext
+|   |   |   |           \---schemes
+|   |   |   |   \---lib
+|   |   |   |   \---test
+|   |   |   |   |   |   \---chunks
+|   |   |   |   |   |   |   |   \---route
+|   |   |   |   |   |   |   \---page
+|   |   |   |   |   |   \---chunks
+|   |   |   |   |   |       \---ssr
+|   |   |   |   |   |   \---media
+|   |   |   |   |   \---types
+|   |   |   |   \---node_modules
+|   |   |   |       |   \---react-slot
+|   |   |   |       |       \---dist
+|   |   |   |       |   \---postcss
+|   |   |   |       |       \---dist
+|   |   |   |       |   |   \---ts5.6
+|   |   |   |       |   |   \---ts5.0
+|   |   |   |       |   |       \---v18
+|   |   |   |       |   |           \---ts5.0
+|   |   |   |       |   \---react-dom
+|   |   |   |       |       \---test-utils
+|   |   |   |       |   |   \---node_modules
+|   |   |   |       |   |       |   \---js
+|   |   |   |       |   |       |       |   \---configs
+|   |   |   |       |   |       |       \---types
+|   |   |   |       |   |       |   \---eslint-plugin-next
+|   |   |   |       |   |       |       \---dist
+|   |   |   |       |   |       |           \---utils
+|   |   |   |       |   |       |   |   |   |   \---flat
+|   |   |   |       |   |       |   |   |   |   \---prefer-optional-chain-utils
+|   |   |   |       |   |       |   |   |   \---util
+|   |   |   |       |   |       |   |   \---node_modules
+|   |   |   |       |   |       |   |       \---.bin
+|   |   |   |       |   |       |   \---parser
+|   |   |   |       |   |       |       \---node_modules
+|   |   |   |       |   |       |           \---.bin
+|   |   |   |       |   |       |   |   |   \---formatters
+|   |   |   |       |   |       |   |   |   \---js
+|   |   |   |       |   |       |   |   |       \---source-code
+|   |   |   |       |   |       |   |   |           \---token-store
+|   |   |   |       |   |       |   |   |   \---code-path-analysis
+|   |   |   |       |   |       |   |   |   \---utils
+|   |   |   |       |   |       |   |   |       \---unicode
+|   |   |   |       |   |       |   |   \---types
+|   |   |   |       |   |       |   \---node_modules
+|   |   |   |       |   |       |       \---.bin
+|   |   |   |       |   |       |   \---node_modules
+|   |   |   |       |   |       |       \---.bin
+|   |   |   |       |   |       |   |   \---workflows
+|   |   |   |       |   |       |   \---tests
+|   |   |   |       |   |       |   |   \---util
+|   |   |   |       |   |       |   \---node_modules
+|   |   |   |       |   |       |       \---.bin
+|   |   |   |       |   |       |   \---node_modules
+|   |   |   |       |   |       |       \---.bin
+|   |   |   |       |   |       |   \---node_modules
+|   |   |   |       |   |       |       \---.bin
+|   |   |   |       |   |       |   \---lib
+|   |   |   |       |   |       |       \---zh-tw
+|   |   |   |       |   |       \---typescript-eslint
+|   |   |   |       |   |           \---node_modules
+|   |   |   |       |   |               \---.bin
+|   |   |   |       |   \---ui
+|   |   |   |       |       |   |   \---react-slot
+|   |   |   |       |       |   |       \---dist
+|   |   |   |       |       |   |   \---postcss
+|   |   |   |       |       |   |       \---dist
+|   |   |   |       |       |   |   \---gen
+|   |   |   |       |       |   |       |   \---templates
+|   |   |   |       |       |   |       |       |   \---templates
+|   |   |   |       |       |   |       |       \---simple-ts
+|   |   |   |       |       |   |       |           \---templates
+|   |   |   |       |       |   |       \---node_modules
+|   |   |   |       |       |   |           \---.bin
+|   |   |   |       |       |   |   |   \---ts5.6
+|   |   |   |       |       |   |   |   \---ts5.0
+|   |   |   |       |       |   |   |       \---v18
+|   |   |   |       |       |   |   |           \---ts5.0
+|   |   |   |       |       |   |   \---react-dom
+|   |   |   |       |       |   |       \---test-utils
+|   |   |   |       |       |   |   |   \---node_modules
+|   |   |   |       |       |   |   |       |   \---js
+|   |   |   |       |       |   |   |       |       |   \---configs
+|   |   |   |       |       |   |   |       |       \---types
+|   |   |   |       |       |   |   |       |   \---eslint-plugin-next
+|   |   |   |       |       |   |   |       |       \---dist
+|   |   |   |       |       |   |   |       |           \---utils
+|   |   |   |       |       |   |   |       |   |   |   |   \---flat
+|   |   |   |       |       |   |   |       |   |   |   |   \---prefer-optional-chain-utils
+|   |   |   |       |       |   |   |       |   |   |   \---util
+|   |   |   |       |       |   |   |       |   |   \---node_modules
+|   |   |   |       |       |   |   |       |   |       \---.bin
+|   |   |   |       |       |   |   |       |   \---parser
+|   |   |   |       |       |   |   |       |       \---node_modules
+|   |   |   |       |       |   |   |       |           \---.bin
+|   |   |   |       |       |   |   |       |   |   |   \---formatters
+|   |   |   |       |       |   |   |       |   |   |   \---js
+|   |   |   |       |       |   |   |       |   |   |       \---source-code
+|   |   |   |       |       |   |   |       |   |   |           \---token-store
+|   |   |   |       |       |   |   |       |   |   |   \---code-path-analysis
+|   |   |   |       |       |   |   |       |   |   |   \---utils
+|   |   |   |       |       |   |   |       |   |   |       \---unicode
+|   |   |   |       |       |   |   |       |   |   \---types
+|   |   |   |       |       |   |   |       |   \---node_modules
+|   |   |   |       |       |   |   |       |       \---.bin
+|   |   |   |       |       |   |   |       |   \---node_modules
+|   |   |   |       |       |   |   |       |       \---.bin
+|   |   |   |       |       |   |   |       |   |   \---workflows
+|   |   |   |       |       |   |   |       |   \---tests
+|   |   |   |       |       |   |   |       |   |   \---util
+|   |   |   |       |       |   |   |       |   \---node_modules
+|   |   |   |       |       |   |   |       |       \---.bin
+|   |   |   |       |       |   |   |       |   \---node_modules
+|   |   |   |       |       |   |   |       |       \---.bin
+|   |   |   |       |       |   |   |       |   \---node_modules
+|   |   |   |       |       |   |   |       |       \---.bin
+|   |   |   |       |       |   |   |       |   \---lib
+|   |   |   |       |       |   |   |       |       \---zh-tw
+|   |   |   |       |       |   |   |       \---typescript-eslint
+|   |   |   |       |       |   |   |           \---node_modules
+|   |   |   |       |       |   |   |               \---.bin
+|   |   |   |       |       |   |   \---typescript-config
+|   |   |   |       |       |   |   \---dist
+|   |   |   |       |       |   |   \---dist
+|   |   |   |       |       |   |   |   |   \---formatters
+|   |   |   |       |       |   |   |   |   \---js
+|   |   |   |       |       |   |   |   |       \---source-code
+|   |   |   |       |       |   |   |   |           \---token-store
+|   |   |   |       |       |   |   |   |   \---code-path-analysis
+|   |   |   |       |       |   |   |   |   \---utils
+|   |   |   |       |       |   |   |   |       \---unicode
+|   |   |   |       |       |   |   |   \---types
+|   |   |   |       |       |   |   \---node_modules
+|   |   |   |       |       |   |       \---.bin
+|   |   |   |       |       |   |   \---dist
+|   |   |   |       |       |   |       |   \---shared
+|   |   |   |       |       |   |       |       \---src
+|   |   |   |       |       |   |       \---umd
+|   |   |   |       |       |   |   \---dist
+|   |   |   |       |       |   |   \---cjs
+|   |   |   |       |       |   |   \---cjs
+|   |   |   |       |       |   |   |   \---es5
+|   |   |   |       |       |   |   \---src
+|   |   |   |       |       |   |       \---lib
+|   |   |   |       |       |   |   \---dist
+|   |   |   |       |       |   |   \---dist
+|   |   |   |       |       |   |   \---lib
+|   |   |   |       |       |   |       \---zh-tw
+|   |   |   |       |       |   \---zod
+|   |   |   |       |       |       |   |   \---tests
+|   |   |   |       |       |       |   |   |   \---tests
+|   |   |   |       |       |       |   |   |   \---tests
+|   |   |   |       |       |       |   |   |       \---locales
+|   |   |   |       |       |       |   |   \---mini
+|   |   |   |       |       |       |   |       \---tests
+|   |   |   |       |       |       |   \---v4-mini
+|   |   |   |       |       |       |   \---locales
+|   |   |   |       |       |       |   \---mini
+|   |   |   |       |       |       \---v4-mini
+|   |   |   |       |       \---src
+|   |   |   |       |           \---styles
+|   |   |   |       |   |   |   \---formatters
+|   |   |   |       |   |   |   \---js
+|   |   |   |       |   |   |       \---source-code
+|   |   |   |       |   |   |           \---token-store
+|   |   |   |       |   |   |   \---code-path-analysis
+|   |   |   |       |   |   |   \---utils
+|   |   |   |       |   |   |       \---unicode
+|   |   |   |       |   |   \---types
+|   |   |   |       |   \---node_modules
+|   |   |   |       |       \---.bin
+|   |   |   |       |   \---dist
+|   |   |   |       |       |   \---shared
+|   |   |   |       |       |       \---src
+|   |   |   |       |       \---umd
+|   |   |   |       |   |   |   |   \---plugins
+|   |   |   |       |   |   |   |   \---__mocks__
+|   |   |   |       |   |   |   |   \---formatter
+|   |   |   |       |   |   |   |   \---object.assign
+|   |   |   |       |   |   |   |   \---pages
+|   |   |   |       |   |   |   |   |   \---blocks
+|   |   |   |       |   |   |   |   |       |   \---loaders
+|   |   |   |       |   |   |   |   |       \---images
+|   |   |   |       |   |   |   |   |   |   \---src
+|   |   |   |       |   |   |   |   |   |       \---runtime
+|   |   |   |       |   |   |   |   |   |   \---src
+|   |   |   |       |   |   |   |   |   |   \---runtime
+|   |   |   |       |   |   |   |   |   |   \---src
+|   |   |   |       |   |   |   |   |   \---resolve-url-loader
+|   |   |   |       |   |   |   |   |       \---lib
+|   |   |   |       |   |   |   |   \---plugins
+|   |   |   |       |   |   |   |       |   \---src
+|   |   |   |       |   |   |   |       \---wellknown-errors-plugin
+|   |   |   |       |   |   |   \---webpack-config-rules
+|   |   |   |       |   |   |   \---internal
+|   |   |   |       |   |   |   |   |   \---reducers
+|   |   |   |       |   |   |   |   \---styles
+|   |   |   |       |   |   |   |   \---hot-reloader
+|   |   |   |       |   |   |   |       \---pages
+|   |   |   |       |   |   |   \---tracing
+|   |   |   |       |   |   |   |   \---toolbox-optimizer
+|   |   |   |       |   |   |   |   \---runtime
+|   |   |   |       |   |   |   |       |   \---esm
+|   |   |   |       |   |   |   |       \---regenerator
+|   |   |   |       |   |   |   |   \---primitives
+|   |   |   |       |   |   |   |   \---accept
+|   |   |   |       |   |   |   |   \---interceptors
+|   |   |   |       |   |   |   |       \---ClientRequest
+|   |   |   |       |   |   |   |   \---triples
+|   |   |   |       |   |   |   |   |   |   \---local
+|   |   |   |       |   |   |   |   |   \---local
+|   |   |   |       |   |   |   |   \---react-refresh-utils
+|   |   |   |       |   |   |   |       \---dist
+|   |   |   |       |   |   |   |           \---internal
+|   |   |   |       |   |   |   |   \---api
+|   |   |   |       |   |   |   |   \---og
+|   |   |   |       |   |   |   |       \---satori
+|   |   |   |       |   |   |   |   \---hmr
+|   |   |   |       |   |   |   |   \---cjs
+|   |   |   |       |   |   |   |   \---cjs
+|   |   |   |       |   |   |   |   \---cjs
+|   |   |   |       |   |   |   |   \---cjs
+|   |   |   |       |   |   |   |   \---cjs
+|   |   |   |       |   |   |   |   \---cjs
+|   |   |   |       |   |   |   |   \---cjs
+|   |   |   |       |   |   |   |   \---cjs
+|   |   |   |       |   |   |   |   \---cjs
+|   |   |   |       |   |   |   |   \---cjs
+|   |   |   |       |   |   |   |   \---cjs
+|   |   |   |       |   |   |   |   \---cjs
+|   |   |   |       |   |   |   \---zod-validation-error
+|   |   |   |       |   |   |   |   |   \---plugins
+|   |   |   |       |   |   |   |   |   \---formatter
+|   |   |   |       |   |   |   |   |   \---object.assign
+|   |   |   |       |   |   |   |   |   \---pages
+|   |   |   |       |   |   |   |   |   |   \---blocks
+|   |   |   |       |   |   |   |   |   |       |   \---loaders
+|   |   |   |       |   |   |   |   |   |       \---images
+|   |   |   |       |   |   |   |   |   |   |   \---src
+|   |   |   |       |   |   |   |   |   |   |       \---runtime
+|   |   |   |       |   |   |   |   |   |   |   \---src
+|   |   |   |       |   |   |   |   |   |   |   \---runtime
+|   |   |   |       |   |   |   |   |   |   |   \---src
+|   |   |   |       |   |   |   |   |   |   \---resolve-url-loader
+|   |   |   |       |   |   |   |   |   |       \---lib
+|   |   |   |       |   |   |   |   |   \---plugins
+|   |   |   |       |   |   |   |   |       |   \---src
+|   |   |   |       |   |   |   |   |       \---wellknown-errors-plugin
+|   |   |   |       |   |   |   |   \---webpack-config-rules
+|   |   |   |       |   |   |   |   |   |   \---reducers
+|   |   |   |       |   |   |   |   |   \---styles
+|   |   |   |       |   |   |   |   |   \---hot-reloader
+|   |   |   |       |   |   |   |   |       \---pages
+|   |   |   |       |   |   |   |   \---tracing
+|   |   |   |       |   |   |   |   \---routes
+|   |   |   |       |   |   |   |   |   \---types
+|   |   |   |       |   |   |   |   \---typescript
+|   |   |   |       |   |   |   |   |   \---font
+|   |   |   |       |   |   |   |   \---userspace
+|   |   |   |       |   |   |   |       |   \---errors
+|   |   |   |       |   |   |   |       \---pages
+|   |   |   |       |   |   |   |   |   \---node
+|   |   |   |       |   |   |   |   |   \---rsc
+|   |   |   |       |   |   |   |   |   \---browser-logs
+|   |   |   |       |   |   |   |   |   \---trace
+|   |   |   |       |   |   |   |   |   |   \---pages
+|   |   |   |       |   |   |   |   |   \---request
+|   |   |   |       |   |   |   |   |   |   \---helpers
+|   |   |   |       |   |   |   |   |   |       \---file-reader
+|   |   |   |       |   |   |   |   |   \---helpers
+|   |   |   |       |   |   |   |   |       \---manifest-loaders
+|   |   |   |       |   |   |   |   |   |   \---vendored
+|   |   |   |       |   |   |   |   |   |       \---ssr
+|   |   |   |       |   |   |   |   |   |   \---helpers
+|   |   |   |       |   |   |   |   |   |   \---vendored
+|   |   |   |       |   |   |   |   |   |       \---contexts
+|   |   |   |       |   |   |   |   |   \---pages-api
+|   |   |   |       |   |   |   |   |   \---rules
+|   |   |   |       |   |   |   |   \---web
+|   |   |   |       |   |   |   |       \---spec-extension
+|   |   |   |       |   |   |   |           \---adapters
+|   |   |   |       |   |   |   \---shared
+|   |   |   |       |   |   |       \---lib
+|   |   |   |       |   |   |           |   \---utils
+|   |   |   |       |   |   |           \---utils
+|   |   |   |       |   |   |   |   \---server
+|   |   |   |       |   |   |   \---testmode
+|   |   |   |       |   |   |       \---proxy
+|   |   |   |       |   |   |   \---routes
+|   |   |   |       |   |   |   |   \---types
+|   |   |   |       |   |   |   \---typescript
+|   |   |   |       |   |   |   |   |   |   \---hooks
+|   |   |   |       |   |   |   |   |   |   |   \---issues-tab
+|   |   |   |       |   |   |   |   |   |   \---resize
+|   |   |   |       |   |   |   |   |   |   |   \---dev-tools-info
+|   |   |   |       |   |   |   |   |   |   |   \---error-feedback
+|   |   |   |       |   |   |   |   |   |   \---overlay
+|   |   |   |       |   |   |   |   |   \---version-staleness-info
+|   |   |   |       |   |   |   |   |   \---runtime-error
+|   |   |   |       |   |   |   |   |   \---thumbs
+|   |   |   |       |   |   |   |   \---utils
+|   |   |   |       |   |   |   |   \---font
+|   |   |   |       |   |   |   \---userspace
+|   |   |   |       |   |   |       |   \---errors
+|   |   |   |       |   |   |       \---pages
+|   |   |   |       |   |   |   |   \---node
+|   |   |   |       |   |   |   |   \---rsc
+|   |   |   |       |   |   |   |   \---browser-logs
+|   |   |   |       |   |   |   |   \---trace
+|   |   |   |       |   |   |   |   |   \---pages
+|   |   |   |       |   |   |   |   \---request
+|   |   |   |       |   |   |   |   |   \---helpers
+|   |   |   |       |   |   |   |   |       \---file-reader
+|   |   |   |       |   |   |   |   \---helpers
+|   |   |   |       |   |   |   |       \---manifest-loaders
+|   |   |   |       |   |   |   |   |   \---vendored
+|   |   |   |       |   |   |   |   |       \---ssr
+|   |   |   |       |   |   |   |   |   \---helpers
+|   |   |   |       |   |   |   |   |   \---vendored
+|   |   |   |       |   |   |   |   |       \---contexts
+|   |   |   |       |   |   |   |   \---pages-api
+|   |   |   |       |   |   |   |   \---rules
+|   |   |   |       |   |   |   \---web
+|   |   |   |       |   |   |       \---spec-extension
+|   |   |   |       |   |   |           \---adapters
+|   |   |   |       |   |   |   \---lib
+|   |   |   |       |   |   |       |   \---utils
+|   |   |   |       |   |   |       \---utils
+|   |   |   |       |   |   |   \---types
+|   |   |   |       |   |   |   \---events
+|   |   |   |       |   |   \---trace
+|   |   |   |       |   |       \---report
+|   |   |   |       |   |   \---testmode
+|   |   |   |       |   |       \---playwright
+|   |   |   |       |   |   \---local
+|   |   |   |       |   |   \---compat
+|   |   |   |       |   \---types
+|   |   |   |       |   \---dist
+|   |   |   |       |   \---cjs
+|   |   |   |       |   \---cjs
+|   |   |   |       \---typescript
+|   |   |   |           \---lib
+|   |   |   |               \---zh-tw
+|   |   |   |   \---bin
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---test
+|   |   |   |   \---dist
+|   |   |   |       \---esm
+|   |   |   \---zod
+|   |   |       |   |   \---tests
+|   |   |       |   |   |   \---tests
+|   |   |       |   |   |   \---tests
+|   |   |       |   |   |       \---locales
+|   |   |       |   |   \---mini
+|   |   |       |   |       \---tests
+|   |   |       |   \---v4-mini
+|   |   |       |   \---locales
+|   |   |       |   \---mini
+|   |   |       \---v4-mini
+|   |   |   \---node_modules
+|   |   |       \---path-key
+|   |   |   \---node_modules
+|   |   |       \---object-assign
+|   |   |   \---node_modules
+|   |   |       \---object-inspect
+|   |   |           \---test
+|   |   |               \---browser
+|   |   |   \---node_modules
+|   |   |       \---object-keys
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       |   \---test
+|   |   |       \---object.assign
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   \---test
+|   |   |       \---object.entries
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---records
+|   |   |       |   \---operations
+|   |   |       |   \---test
+|   |   |       \---object.fromentries
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   \---test
+|   |   |       \---object.values
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---wrappy
+|   |   |   \---node_modules
+|   |   |       \---onetime
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---lib
+|   |   |       |   \---lib
+|   |   |       |   \---lib
+|   |   |       |   \---lib
+|   |   |       \---word-wrap
+|   |   |   \---node_modules
+|   |   |       |   \---source
+|   |   |       \---wcwidth
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---source
+|   |   |       \---wcwidth
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---os-tmpdir
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---safe-push-apply
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---yocto-queue
+|   |   |   \---node_modules
+|   |   |       \---p-locate
+|   |   |   \---node_modules
+|   |   |       \---p-map
+|   |   |   \---node_modules
+|   |   |       |   \---quickjs-emscripten
+|   |   |       |       \---dist
+|   |   |       |           \---generated
+|   |   |       |   \---dist
+|   |   |       |   \---src
+|   |   |       |   \---dist
+|   |   |       |   \---dist
+|   |   |       |   \---dist
+|   |   |       |   \---dist
+|   |   |       |   \---dist
+|   |   |       \---socks-proxy-agent
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---tests
+|   |   |       \---pac-resolver
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       |   \---vendor
+|   |   |       \---param-case
+|   |   |   \---node_modules
+|   |   |       \---parent-module
+|   |   |   \---node_modules
+|   |   |       \---upper-case-first
+|   |   |   \---node_modules
+|   |   |       |   \---vendor
+|   |   |       \---path-case
+|   |   |   \---node_modules
+|   |   |       \---path-exists
+|   |   |   \---node_modules
+|   |   |       \---path-is-absolute
+|   |   |   \---node_modules
+|   |   |       \---path-key
+|   |   |   \---node_modules
+|   |   |       \---path-parse
+|   |   |   \---node_modules
+|   |   |       \---path-type
+|   |   |   \---node_modules
+|   |   |       \---picocolors
+|   |   |   \---node_modules
+|   |   |       \---picocolors
+|   |   |   \---node_modules
+|   |   |       \---picomatch
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---possible-typed-array-names
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---url-alphabet
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---source-map-js
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       |   \---url-alphabet
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---source-map-js
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---prelude-ls
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---prettier
+|   |   |           \---plugins
+|   |   |   \---node_modules
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---react-is
+|   |   |           \---umd
+|   |   |   \---node_modules
+|   |   |       |   \---dist
+|   |   |       |   \---src
+|   |   |       |   \---dist
+|   |   |       |   \---dist
+|   |   |       |   \---dist
+|   |   |       |   \---dist
+|   |   |       \---socks-proxy-agent
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       \---proxy-from-env
+|   |   |   \---node_modules
+|   |   |       \---punycode
+|   |   |   \---node_modules
+|   |   |       \---queue-microtask
+|   |   |   \---node_modules
+|   |   |       |   \---lib
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---strip-json-comments
+|   |   |   \---node_modules
+|   |   |       |   \---cjs
+|   |   |       |   \---cjs
+|   |   |       \---scheduler
+|   |   |           \---cjs
+|   |   |   \---node_modules
+|   |   |       \---react-is
+|   |   |           \---umd
+|   |   |   \---node_modules
+|   |   |       \---react
+|   |   |           \---cjs
+|   |   |   \---node_modules
+|   |   |       |   \---lib
+|   |   |       |       \---internal
+|   |   |       |           \---streams
+|   |   |       |   \---lib
+|   |   |       \---util-deprecate
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---records
+|   |   |       |   \---operations
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---which-builtin-type
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---set-function-name
+|   |   |           \---.github
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   |   \---.bin
+|   |   |       |   \---test
+|   |   |       \---safe-buffer
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---registry-url
+|   |   |           \---node_modules
+|   |   |               \---.bin
+|   |   |   \---node_modules
+|   |   |       \---resolve-from
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       |   \---abc
+|   |   |       |       |   |   \---aaa
+|   |   |       |       |   |   \---aaa
+|   |   |       |       |   \---zmodules
+|   |   |       |       |       \---bbb
+|   |   |       |       |   |   \---ccc
+|   |   |       |       |   \---y
+|   |   |       |       |       \---ccc
+|   |   |       |       |   \---deep_ref
+|   |   |       |       |   \---bbb
+|   |   |       |       |   |   \---packages
+|   |   |       |       |   |       \---package-b
+|   |   |       |       |   |   \---mylib
+|   |   |       |       |   |   \---lib
+|   |   |       |       |   |   \---foo
+|   |   |       |       |   |   \---foo
+|   |   |       |       |   |   \---_
+|   |   |       |       |   |       \---symlink_target
+|   |   |       |       |   \---without_basedir
+|   |   |       |       \---shadowed_core
+|   |   |       |           \---node_modules
+|   |   |       |               \---util
+|   |   |       \---supports-preserve-symlinks-flag
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       |   \---abc
+|   |   |       |       |   |   \---aaa
+|   |   |       |       |   |   \---aaa
+|   |   |       |       |   \---zmodules
+|   |   |       |       |       \---bbb
+|   |   |       |       |   |   \---ccc
+|   |   |       |       |   \---y
+|   |   |       |       |       \---ccc
+|   |   |       |       |   \---deep_ref
+|   |   |       |       |   \---bbb
+|   |   |       |       |   |   \---packages
+|   |   |       |       |   |       \---package-b
+|   |   |       |       |   |   \---mylib
+|   |   |       |       |   |   \---lib
+|   |   |       |       |   |   \---foo
+|   |   |       |       |   |   \---foo
+|   |   |       |       |   |   \---_
+|   |   |       |       |   |       \---symlink_target
+|   |   |       |       |   \---without_basedir
+|   |   |       |       \---shadowed_core
+|   |   |       |           \---node_modules
+|   |   |       |               \---util
+|   |   |       \---supports-preserve-symlinks-flag
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---signal-exit
+|   |   |   \---node_modules
+|   |   |       \---reusify
+|   |   |           |   \---workflows
+|   |   |           \---benchmarks
+|   |   |   \---node_modules
+|   |   |       \---rimraf
+|   |   |   \---node_modules
+|   |   |       \---run-async
+|   |   |   \---node_modules
+|   |   |       \---run-parallel
+|   |   |   \---node_modules
+|   |   |       |   |   |   \---dom
+|   |   |       |   |   \---operator
+|   |   |       |   |   |   \---dom
+|   |   |       |   |   \---util
+|   |   |       |   |   \---update-6_0_0
+|   |   |       |   |   \---dom
+|   |   |       |   |   |   |   \---dom
+|   |   |       |   |   |   \---operator
+|   |   |       |   |   |   |   \---dom
+|   |   |       |   |   |   \---util
+|   |   |       |   |   |   \---dom
+|   |   |       |   |   \---webSocket
+|   |   |       |   |   |   |   \---dom
+|   |   |       |   |   |   \---util
+|   |   |       |   |   \---webSocket
+|   |   |       |   \---_esm5
+|   |   |       |       |   |   \---dom
+|   |   |       |       |   \---util
+|   |   |       |       \---webSocket
+|   |   |       \---tslib
+|   |   |           \---test
+|   |   |               \---validateModuleExportsMatchCommonJS
+|   |   |   \---node_modules
+|   |   |       |   |   |   |   |   \---dom
+|   |   |       |   |   |   |   \---util
+|   |   |       |   |   |   \---webSocket
+|   |   |       |   |   |   |   |   \---dom
+|   |   |       |   |   |   |   \---util
+|   |   |       |   |   |   \---webSocket
+|   |   |       |   |   |   |   |   \---dom
+|   |   |       |   |   |   |   \---util
+|   |   |       |   |   |   \---webSocket
+|   |   |       |   |   \---types
+|   |   |       |   |       |   |   \---dom
+|   |   |       |   |       |   \---util
+|   |   |       |   |       \---webSocket
+|   |   |       |   |   |   |   \---dom
+|   |   |       |   |   |   \---util
+|   |   |       |   |   \---webSocket
+|   |   |       |   \---webSocket
+|   |   |       \---tslib
+|   |   |           \---modules
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       \---safe-array-concat
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---safe-buffer
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---safe-push-apply
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---safe-regex-test
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---safer-buffer
+|   |   |   \---node_modules
+|   |   |       \---scheduler
+|   |   |           \---cjs
+|   |   |   \---node_modules
+|   |   |       \---semver
+|   |   |           \---bin
+|   |   |   \---node_modules
+|   |   |       \---semver
+|   |   |           \---ranges
+|   |   |   \---node_modules
+|   |   |       \---semver
+|   |   |           \---ranges
+|   |   |   \---node_modules
+|   |   |       |   \---vendor
+|   |   |       \---upper-case-first
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---set-function-length
+|   |   |           \---.github
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---set-function-name
+|   |   |           \---.github
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---set-proto
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---sharp-win32-x64
+|   |   |       |       \---lib
+|   |   |       |   \---lib
+|   |   |       |   \---ranges
+|   |   |       \---sharp
+|   |   |           |   \---.bin
+|   |   |           \---src
+|   |   |   \---node_modules
+|   |   |       \---shebang-regex
+|   |   |   \---node_modules
+|   |   |       \---shebang-regex
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---browser
+|   |   |       \---side-channel-list
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---browser
+|   |   |       \---side-channel-map
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---browser
+|   |   |       |   \---test
+|   |   |       \---side-channel-weakmap
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---browser
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---side-channel-weakmap
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---signal-exit
+|   |   |   \---node_modules
+|   |   |       \---simple-swizzle
+|   |   |   \---node_modules
+|   |   |       \---slash
+|   |   |   \---node_modules
+|   |   |       \---smart-buffer
+|   |   |           \---typings
+|   |   |   \---node_modules
+|   |   |       |   \---vendor
+|   |   |       \---snake-case
+|   |   |   \---node_modules
+|   |   |       |   \---dist
+|   |   |       |   \---src
+|   |   |       |   |   \---common
+|   |   |       |   |   \---examples
+|   |   |       |   |       \---typescript
+|   |   |       |   \---typings
+|   |   |       |       \---common
+|   |   |       \---socks-proxy-agent
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       |   |   \---v6
+|   |   |       |   \---src
+|   |   |       |       \---v6
+|   |   |       |   \---typings
+|   |   |       \---socks
+|   |   |           |   \---common
+|   |   |           |   \---examples
+|   |   |           |       \---typescript
+|   |   |           \---typings
+|   |   |               \---common
+|   |   |   \---node_modules
+|   |   |       \---source-map-js
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---source-map
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---sprintf-js
+|   |   |           \---src
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---stop-iteration-iterator
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---es2015
+|   |   |       \---strip-ansi
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---records
+|   |   |       |   \---operations
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   \---test
+|   |   |       \---string.prototype.matchall
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---.github
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---records
+|   |   |       |   \---operations
+|   |   |       \---string.prototype.repeat
+|   |   |           \---tests
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---tables
+|   |   |       |   |   \---records
+|   |   |       |   \---operations
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---string.prototype.trim
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   \---test
+|   |   |       \---string.prototype.trimend
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---.github
+|   |   |       |   \---test
+|   |   |       \---string.prototype.trimstart
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---string_decoder
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---strip-ansi
+|   |   |   \---node_modules
+|   |   |       \---strip-final-newline
+|   |   |   \---node_modules
+|   |   |       \---strip-json-comments
+|   |   |   \---node_modules
+|   |   |       \---strip-json-comments
+|   |   |   \---node_modules
+|   |   |       |   \---cjs
+|   |   |       \---styled-jsx
+|   |   |           |   \---webpack
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---supports-color
+|   |   |   \---node_modules
+|   |   |       \---supports-color
+|   |   |   \---node_modules
+|   |   |       \---supports-preserve-symlinks-flag
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---upper-case
+|   |   |   \---node_modules
+|   |   |       \---tailwind-merge
+|   |   |           |   \---es5
+|   |   |           \---src
+|   |   |               \---lib
+|   |   |   \---node_modules
+|   |   |       \---tailwindcss
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       \---tapable
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       |   \---fs-minipass
+|   |   |       |       \---dist
+|   |   |       |           \---esm
+|   |   |       |   \---dist
+|   |   |       |       \---esm
+|   |   |       |   \---dist
+|   |   |       |       \---esm
+|   |   |       |   \---dist
+|   |   |       |       \---esm
+|   |   |       |   \---dist
+|   |   |       |       |   \---src
+|   |   |       |       \---mjs
+|   |   |       |   |   \---esm
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---yallist
+|   |   |           \---dist
+|   |   |               \---esm
+|   |   |   \---node_modules
+|   |   |       \---through
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---tinycolor2
+|   |   |           \---esm
+|   |   |   \---node_modules
+|   |   |       |   \---tinycolor2
+|   |   |       |   \---esm
+|   |   |       \---tinygradient
+|   |   |   \---node_modules
+|   |   |       |   \---vendor
+|   |   |       \---upper-case
+|   |   |   \---node_modules
+|   |   |       \---tmp
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---to-regex-range
+|   |   |   \---node_modules
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---typescript
+|   |   |           \---lib
+|   |   |               \---zh-tw
+|   |   |   \---node_modules
+|   |   |       |   \---source-map-support
+|   |   |       |   \---node16
+|   |   |       |   \---node
+|   |   |       |       \---ts5.6
+|   |   |       |   \---dist
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---lib
+|   |   |       |       \---util
+|   |   |       |   \---dist
+|   |   |       |   |   \---transpilers
+|   |   |       |   |   \---.bin
+|   |   |       |   \---transpilers
+|   |   |       |   \---lib
+|   |   |       |       \---zh-tw
+|   |   |       \---yn
+|   |   |   \---node_modules
+|   |   |       \---tslib
+|   |   |           \---test
+|   |   |               \---validateModuleExportsMatchCommonJS
+|   |   |   \---node_modules
+|   |   |       \---tslib
+|   |   |           \---modules
+|   |   |   \---node_modules
+|   |   |       \---turbo-windows-64
+|   |   |           \---bin
+|   |   |   \---node_modules
+|   |   |       |   \---bin
+|   |   |       \---turbo-windows-64
+|   |   |           \---bin
+|   |   |   \---node_modules
+|   |   |       \---tw-animate-css
+|   |   |           \---dist
+|   |   |   \---node_modules
+|   |   |       |   \---lib
+|   |   |       \---type-check
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---type-fest
+|   |   |           \---ts41
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---typed-array-buffer
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---typed-array-byte-length
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---typed-array-byte-offset
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---typed-array-length
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   |   |   |   \---flat
+|   |   |       |   |   |   |   \---prefer-optional-chain-utils
+|   |   |       |   |   |   \---util
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   |   |   \---ts-estree
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   \---utils
+|   |   |       |       |   |   \---eslint-utils
+|   |   |       |       |   |   \---eslint
+|   |   |       |       |   \---ts-utils
+|   |   |       |       \---node_modules
+|   |   |       |           \---.bin
+|   |   |       |   |   |   \---formatters
+|   |   |       |   |   |   \---js
+|   |   |       |   |   |       \---source-code
+|   |   |       |   |   |           \---token-store
+|   |   |       |   |   |   \---code-path-analysis
+|   |   |       |   |   |   \---utils
+|   |   |       |   |   |       \---unicode
+|   |   |       |   |   \---types
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---lib
+|   |   |       |       \---zh-tw
+|   |   |       \---typescript-eslint
+|   |   |           \---node_modules
+|   |   |               \---.bin
+|   |   |   \---node_modules
+|   |   |       \---typescript
+|   |   |           \---lib
+|   |   |               \---zh-tw
+|   |   |   \---node_modules
+|   |   |       \---typescript
+|   |   |           \---lib
+|   |   |               \---zh-tw
+|   |   |   \---node_modules
+|   |   |       \---uglify-js
+|   |   |           \---tools
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       |   \---test
+|   |   |       \---which-boxed-primitive
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---undici-types
+|   |   |   \---node_modules
+|   |   |       \---universalify
+|   |   |   \---node_modules
+|   |   |       |   |   \---.bin
+|   |   |       |   \---test
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       \---update-check
+|   |   |   \---node_modules
+|   |   |       \---upper-case-first
+|   |   |   \---node_modules
+|   |   |       \---upper-case
+|   |   |   \---node_modules
+|   |   |       \---uri-js
+|   |   |           \---dist
+|   |   |               \---esnext
+|   |   |                   \---schemes
+|   |   |   \---node_modules
+|   |   |       \---util-deprecate
+|   |   |   \---node_modules
+|   |   |       \---v8-compile-cache-lib
+|   |   |   \---node_modules
+|   |   |       \---validate-npm-package-name
+|   |   |           \---lib
+|   |   |   \---node_modules
+|   |   |       \---wcwidth
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---which-boxed-primitive
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---which-typed-array
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       \---which-collection
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |   \---test
+|   |   |       |       \---shams
+|   |   |       \---which-typed-array
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       |   \---test
+|   |   |       \---which
+|   |   |           \---bin
+|   |   |   \---node_modules
+|   |   |       \---word-wrap
+|   |   |   \---node_modules
+|   |   |       \---wordwrap
+|   |   |           \---test
+|   |   |   \---node_modules
+|   |   |       \---wrap-ansi
+|   |   |   \---node_modules
+|   |   |       \---wrappy
+|   |   |   \---node_modules
+|   |   |       \---yallist
+|   |   |           \---dist
+|   |   |               \---esm
+|   |   |   \---node_modules
+|   |   |       \---yn
+|   |   |   \---node_modules
+|   |   |       \---yocto-queue
+|   |   \---zod@3.25.76
+|   |       \---node_modules
+|   |           \---zod
+|   |               |   |   \---tests
+|   |               |   |   |   \---tests
+|   |               |   |   |   \---tests
+|   |               |   |   |       \---locales
+|   |               |   |   \---mini
+|   |               |   |       \---tests
+|   |               |   \---v4-mini
+|   |               |   \---locales
+|   |               |   \---mini
+|   |               \---v4-mini
+|   |   |   \---node_modules
+|   |   |       |   \---js
+|   |   |       |       |   \---configs
+|   |   |       |       \---types
+|   |   |       |   \---eslint-plugin-next
+|   |   |       |       \---dist
+|   |   |       |           \---utils
+|   |   |       |   |   |   |   \---flat
+|   |   |       |   |   |   |   \---prefer-optional-chain-utils
+|   |   |       |   |   |   \---util
+|   |   |       |   |   \---node_modules
+|   |   |       |   |       \---.bin
+|   |   |       |   \---parser
+|   |   |       |       \---node_modules
+|   |   |       |           \---.bin
+|   |   |       |   |   |   \---formatters
+|   |   |       |   |   |   \---js
+|   |   |       |   |   |       \---source-code
+|   |   |       |   |   |           \---token-store
+|   |   |       |   |   |   \---code-path-analysis
+|   |   |       |   |   |   \---utils
+|   |   |       |   |   |       \---unicode
+|   |   |       |   |   \---types
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   |   \---workflows
+|   |   |       |   \---tests
+|   |   |       |   |   \---util
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---node_modules
+|   |   |       |       \---.bin
+|   |   |       |   \---lib
+|   |   |       |       \---zh-tw
+|   |   |       \---typescript-eslint
+|   |   |           \---node_modules
+|   |   |               \---.bin
+|   |   \---typescript-config
+|   |   \---plugins
+|   |   \---bin
+|   \---typescript
+|       \---lib
+|           \---zh-tw
+\---packages
+    |   \---node_modules
+    |       |   \---js
+    |       |       |   \---configs
+    |       |       \---types
+    |       |   \---eslint-plugin-next
+    |       |       \---dist
+    |       |           \---utils
+    |       |   |   |   |   \---flat
+    |       |   |   |   |   \---prefer-optional-chain-utils
+    |       |   |   |   \---util
+    |       |   |   \---node_modules
+    |       |   |       \---.bin
+    |       |   \---parser
+    |       |       \---node_modules
+    |       |           \---.bin
+    |       |   |   |   \---formatters
+    |       |   |   |   \---js
+    |       |   |   |       \---source-code
+    |       |   |   |           \---token-store
+    |       |   |   |   \---code-path-analysis
+    |       |   |   |   \---utils
+    |       |   |   |       \---unicode
+    |       |   |   \---types
+    |       |   \---node_modules
+    |       |       \---.bin
+    |       |   \---node_modules
+    |       |       \---.bin
+    |       |   |   \---workflows
+    |       |   \---tests
+    |       |   |   \---util
+    |       |   \---node_modules
+    |       |       \---.bin
+    |       |   \---node_modules
+    |       |       \---.bin
+    |       |   \---node_modules
+    |       |       \---.bin
+    |       |   \---lib
+    |       |       \---zh-tw
+    |       \---typescript-eslint
+    |           \---node_modules
+    |               \---.bin
+    \---ui
+        |   |   \---react-slot
+        |   |       \---dist
+        |   |   \---postcss
+        |   |       \---dist
+        |   |   \---gen
+        |   |       |   \---templates
+        |   |       |       |   \---templates
+        |   |       |       \---simple-ts
+        |   |       |           \---templates
+        |   |       \---node_modules
+        |   |           \---.bin
+        |   |   |   \---ts5.6
+        |   |   |   \---ts5.0
+        |   |   |       \---v18
+        |   |   |           \---ts5.0
+        |   |   \---react-dom
+        |   |       \---test-utils
+        |   |   |   \---node_modules
+        |   |   |       |   \---js
+        |   |   |       |       |   \---configs
+        |   |   |       |       \---types
+        |   |   |       |   \---eslint-plugin-next
+        |   |   |       |       \---dist
+        |   |   |       |           \---utils
+        |   |   |       |   |   |   |   \---flat
+        |   |   |       |   |   |   |   \---prefer-optional-chain-utils
+        |   |   |       |   |   |   \---util
+        |   |   |       |   |   \---node_modules
+        |   |   |       |   |       \---.bin
+        |   |   |       |   \---parser
+        |   |   |       |       \---node_modules
+        |   |   |       |           \---.bin
+        |   |   |       |   |   |   \---formatters
+        |   |   |       |   |   |   \---js
+        |   |   |       |   |   |       \---source-code
+        |   |   |       |   |   |           \---token-store
+        |   |   |       |   |   |   \---code-path-analysis
+        |   |   |       |   |   |   \---utils
+        |   |   |       |   |   |       \---unicode
+        |   |   |       |   |   \---types
+        |   |   |       |   \---node_modules
+        |   |   |       |       \---.bin
+        |   |   |       |   \---node_modules
+        |   |   |       |       \---.bin
+        |   |   |       |   |   \---workflows
+        |   |   |       |   \---tests
+        |   |   |       |   |   \---util
+        |   |   |       |   \---node_modules
+        |   |   |       |       \---.bin
+        |   |   |       |   \---node_modules
+        |   |   |       |       \---.bin
+        |   |   |       |   \---node_modules
+        |   |   |       |       \---.bin
+        |   |   |       |   \---lib
+        |   |   |       |       \---zh-tw
+        |   |   |       \---typescript-eslint
+        |   |   |           \---node_modules
+        |   |   |               \---.bin
+        |   |   \---typescript-config
+        |   |   \---dist
+        |   |   \---dist
+        |   |   |   |   \---formatters
+        |   |   |   |   \---js
+        |   |   |   |       \---source-code
+        |   |   |   |           \---token-store
+        |   |   |   |   \---code-path-analysis
+        |   |   |   |   \---utils
+        |   |   |   |       \---unicode
+        |   |   |   \---types
+        |   |   \---node_modules
+        |   |       \---.bin
+        |   |   \---dist
+        |   |       |   \---shared
+        |   |       |       \---src
+        |   |       \---umd
+        |   |   \---dist
+        |   |   \---cjs
+        |   |   \---cjs
+        |   |   |   \---es5
+        |   |   \---src
+        |   |       \---lib
+        |   |   \---dist
+        |   |   \---dist
+        |   |   \---lib
+        |   |       \---zh-tw
+        |   \---zod
+        |       |   |   \---tests
+        |       |   |   |   \---tests
+        |       |   |   |   \---tests
+        |       |   |   |       \---locales
+        |       |   |   \---mini
+        |       |   |       \---tests
+        |       |   \---v4-mini
+        |       |   \---locales
+        |       |   \---mini
+        |       \---v4-mini
+        \---src
+            \---styles
