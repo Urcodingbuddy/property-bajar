@@ -100,7 +100,7 @@ export function SearchBar() {
             </button>
           ))}
           <div className="border my-2" />
-          <button className="px-6 py-3 whitespace-nowrap font-medium text-sm h-12 flex items-center">
+          <button className="px-6 py-3 text-black/70 whitespace-nowrap font-medium text-sm h-12 flex items-center">
             Post Property
             <span className="ml-2 bg-linear-to-b from-[#1B8700] to-[#072100] text-white text-xs px-2 py-0.5 rounded">
               Free
