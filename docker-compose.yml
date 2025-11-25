@@ -1,0 +1,11 @@
+services:
+  api:
+    build:
+      context: .  # Build from root, not apps/api
+      dockerfile: ./apps/api/Dockerfile
+    container_name: property_api
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./apps/api/.env
+    # Command is now in Dockerfile, no need to override
