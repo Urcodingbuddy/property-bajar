@@ -120,7 +120,7 @@ export default function HighDemand() {
       <div className="relative">
         <button
           onClick={prev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white border border-gray-300 rounded-full p-2 shadow z-20"
+          className="absolute hidden md:block left-0 top-1/2 -translate-y-1/2 bg-white border border-gray-300 rounded-full p-2 shadow z-20"
           aria-label="Previous"
         >
           <ArrowLeft className="text-[#513B2F]" />

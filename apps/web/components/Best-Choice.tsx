@@ -94,7 +94,7 @@ export default function BestChoice() {
       <div className="relative mt-6">
         <button
           onClick={backward}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white border rounded-full p-2 shadow-lg hover:bg-gray-50 transition-colors"
+          className="hidden md:block absolute  left-0 top-1/2 -translate-y-1/2 z-20 bg-white  rounded-full p-2 shadow-lg hover:bg-gray-50 transition-colors"
           aria-label="Previous"
         >
           <ChevronLeft className="w-6 h-6 text-gray-700" />
@@ -102,7 +102,7 @@ export default function BestChoice() {
 
         <button
           onClick={step}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white border rounded-full p-2 shadow-lg hover:bg-gray-50 transition-colors"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 transition-colors"
           aria-label="Next"
         >
           <ChevronRight className="w-6 h-6 text-gray-700" />
