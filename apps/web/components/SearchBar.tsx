@@ -145,7 +145,7 @@ export function SearchBar() {
           </div>
 
           {}
-          <div className="flex gap-4 items-center h-12">
+          <div className="hidden md:flex gap-4 items-center h-12">
             {}
             <div className=" flex-0">
               <button
