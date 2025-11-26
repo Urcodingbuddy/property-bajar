@@ -1,11 +1,36 @@
 services:
   api:
     build:
-      context: .  # Build from root, not apps/api
+      context: .
       dockerfile: ./apps/api/Dockerfile
     container_name: property_api
     ports:
       - "8080:8080"
     env_file:
       - ./apps/api/.env
-    # Command is now in Dockerfile, no need to override
+    depends_on:
+      - db
+    networks:
+      - appnet
+
+db:
+  image: postgres:16-alpine
+  container_name: property_db
+  restart: unless-stopped
+  environment:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: postgres
+    POSTGRES_DB: postgres
+  ports:
+    - "5432:5432"
+  volumes:
+    - pgdata:/var/lib/postgresql/data
+  networks:
+    - appnet
+
+networks:
+  appnet:
+    driver: bridge
+
+volumes:
+  pgdata:
