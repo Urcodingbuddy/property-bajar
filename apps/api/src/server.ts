@@ -1,21 +1,22 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
-
-dotenv.config();
+import { ENV } from "./config/env";
+import { prisma } from "@workspace/db";
 
 const app = express();
-const PORT = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req:Request, res: Response)=>{
-    res.send("API is running successfully");
-})
-
-app.listen(PORT, ()=>{
-    console.log(`Server running on http://localhost:${PORT}`)
+app.get("/api/health", (_, res) => {
+  res.status(200).json({ status: "ok", message: "Server is running" });
 });
 
+app.get("/api/users", async (_, res) => {
+  const users = await prisma.user.findMany();
+  res.json(users);
+});
 
+app.listen(ENV.PORT, () => {
+  console.log(`⚡ Server running on port ${ENV.PORT} in ${ENV.NODE_ENV} mode`);
+});
