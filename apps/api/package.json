@@ -14,6 +14,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.4.1",
   "dependencies": {
+    "@workspace/db": "workspace:*",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0"
@@ -24,6 +25,7 @@
     "@types/node": "^20.19.9",
     "nodemon": "^3.1.11",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
   }
 }
