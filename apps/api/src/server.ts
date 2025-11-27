@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { ENV } from "./config/env";
-import { prisma } from "@workspace/db";
+import { prisma } from "@workspace/db/src";
 
 const app = express();
 
