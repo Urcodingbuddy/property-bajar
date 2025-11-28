@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@workspace/db": ["packages/db/src/*"]
+      }
+    }
+  }
