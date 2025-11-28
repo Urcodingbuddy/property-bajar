@@ -1,10 +1,9 @@
 import express from "express";
 import cors from "cors";
 import { ENV } from "./config/env";
-import { prisma } from "@workspace/db";
+import { prisma } from "@workspace/db/index";
 
 const app = express();
-
 app.use(cors());
 app.use(express.json());
 
@@ -17,6 +16,6 @@ app.get("/api/users", async (_, res) => {
   res.json(users);
 });
 
-app.listen(ENV.PORT, () => {
+app.listen(3000, () => {
   console.log(`⚡ Server running on port ${ENV.PORT} in ${ENV.NODE_ENV} mode`);
 });
